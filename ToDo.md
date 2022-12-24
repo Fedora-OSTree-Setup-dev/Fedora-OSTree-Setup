@@ -43,7 +43,7 @@ KDE
 - enabling Mac-Adress randomization for privacy
 - enabling
 - setting up a nice GRUB theme with asking, external github repo cloned
-- applying UEFI Firmware updates using a systemd timer ([Fedora Silverblue autoupdates](https://miabbott.github.io/2018/06/13/rpm-ostree-automatic-updates.html) as example of a really nice integration)
+- applying UEFI Firmware updates using a systemd timer ([Fedora Silverblue autoupdates](https://github.com/tonywalker1/silverblue-update) as example of a really nice integration)
 - theme flatpaks using your set GTK theme
 - battery charging limit with asking
 - disable Gnome software and Discover updates and background processes without asking, not needed anymore. Only useful for searching programs in the nice gui.
