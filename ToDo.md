@@ -39,7 +39,7 @@ KDE
 - does it automatically add the repo to Discover / GNOME Software?
 
 ## 6. Configure settings
-- Automatic rpm-ostree and Flatpak updates through integration of [this nice script](https://miabbott.github.io/2018/06/13/rpm-ostree-automatic-updates.html)
+- Automatic rpm-ostree and Flatpak updates through integration of [this nice script](https://github.com/tonywalker1/silverblue-update)
 - enabling Mac-Adress randomization for privacy
 - enabling
 - setting up a nice GRUB theme with asking, external github repo cloned
