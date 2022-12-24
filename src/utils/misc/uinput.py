@@ -12,6 +12,7 @@ def uinput(console: Console, msg: str, qtype: int) -> Any:
         qtype -- question type, whether y/N, string input or number input
             1 is yes or no input
             2 is number/list input
+            3 is for string or char input
 
     Returns:
         The evaluated input based on the user response, e.g.:
@@ -31,6 +32,14 @@ def uinput(console: Console, msg: str, qtype: int) -> Any:
             console.print(
                 (
                     f"{msg} [bold][NUMBER/LIST INPUT"
+                    ", separate by comma ','][/bold]"
+                ), end=" "
+            )
+            return input()
+        case 3:
+            console.print(
+                (
+                    f"{msg} [bold][CHAR/STRING INPUT"
                     ", separate by comma ','][/bold]"
                 ), end=" "
             )
