@@ -74,9 +74,10 @@ the other repos are pretty unnesscary for normal users, this is to mention
 
 ## 10. Installing rpm-packages
 - NOTIFICATION: "You can do other stuff now, installing takes a while...", best as notification in the tray?
+- TIP: To list available dnf packages, you can enter a toolbox (toolbox create 1 && toolbox enter 1 && dnf list) or layer dnfdragora (sudo rpm-ostree install dnfdragora), as rpm-ostree doesnt support that currently
 - Speed: use extra script that is generated using appending the names
 - As if want to game and use the custom RPM Proton https://github.com/GloriousEggroll/proton-ge-custom or the flatpak one without patches
-- sudo rpm-ostree override remove libavcodec-free --install exiftool perl-Image-ExifTool clamtk* fail2ban tlp make gcc-c++ qemu-kvm qemu-img qemu-user-static kffmpegthumbnailer #libfprint unrar stacer pip android-tools btfs
+- sudo rpm-ostree override remove libavcodec-free --install exiftool perl-Image-ExifTool clamtk* fail2ban tlp make gcc-c++ qemu-kvm qemu-img qemu-user-static ffmpegthumbs kffmpegthumbnailer #libfprint unrar stacer pip android-tools btfs
 
 `printf "appnamex " >> ~/Fedora-OSTree-setup/rpm-install.sh`
 
