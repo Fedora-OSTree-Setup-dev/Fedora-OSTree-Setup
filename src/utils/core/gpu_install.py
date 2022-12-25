@@ -8,7 +8,7 @@ from subprocess import (
 from src.utils.log.logger import Logger
 
 
-def fetch_gpu(log: Logger) -> tuple[str, str | None] | None:
+def fetch_gpu(log: Logger) -> list[str] | None:
     """Fetch the GPU of the system.
 
     Args:
