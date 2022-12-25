@@ -31,4 +31,11 @@ def fetch_gpu(log: Logger) -> tuple[str, str | None] | None:
         log.logger("e", f"{Err}. Command lspci failed to execute.")
         return None
     else:
-        return gpu_name.decode("utf-8").strip().split("\n")
+        return [
+            gpu.split(":") for gpu in (
+                gpu_name
+                    .decode("utf-8")
+                    .strip()
+                    .split("\n")
+            )
+        ]
