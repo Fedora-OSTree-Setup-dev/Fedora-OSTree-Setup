@@ -6,6 +6,8 @@ Intel internal:
 
 Nvidia:
 - ask if proprietary or Foss drivers
+- akmod-nvidia xorg-x11-drv-nvidia
+- OR akmod-nvodia xorg-x11-drv-nvidia-cuda
 
 `printf "sudo rpm-ostree install appname" > ~/bin/rpm-installscript.sh`
 
@@ -73,6 +75,8 @@ the other repos are pretty unnesscary for normal users, this is to mention
 ## 10. Installing rpm-packages
 - NOTIFICATION: "You can do other stuff now, installing takes a while...", best as notification in the tray?
 - Speed: use extra script that is generated using appending the names
+- As if want to game and use the custom RPM Proton https://github.com/GloriousEggroll/proton-ge-custom or the flatpak one without patches
+- sudo rpm-ostree override remove libavcodec-free --install exiftool perl-Image-ExifTool clamtk* fail2ban tlp make gcc-c++ qemu-kvm qemu-img qemu-user-static kffmpegthumbnailer #libfprint unrar stacer pip android-tools btfs
 
 `printf "appnamex " >> ~/Fedora-OSTree-setup/rpm-install.sh`
 
