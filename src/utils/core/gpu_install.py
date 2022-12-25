@@ -27,7 +27,7 @@ def fetch_gpu(log: Logger) -> str | None:
 
         if lspci_out.returncode != 0:
             raise SystemExit(["lspci"], lspci_out.returncode)
-    except CalledProcessError as Err:
+    except (CalledProcessError, FileNotFoundError) as Err:
         log.logger("e", f"{Err}. Command lspci failed to execute.")
         return None
     else:
