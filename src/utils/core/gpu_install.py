@@ -8,7 +8,7 @@ from subprocess import (
 from src.utils.log.logger import Logger
 
 
-def fetch_gpu(log: Logger) -> str | None:
+def fetch_gpu(log: Logger) -> tuple[str, str | None] | None:
     """Fetch the GPU of the system.
 
     Args:
@@ -31,4 +31,4 @@ def fetch_gpu(log: Logger) -> str | None:
         log.logger("e", f"{Err}. Command lspci failed to execute.")
         return None
     else:
-        return gpu_name
+        return gpu_name.decode("utf-8").strip().split("\n")
