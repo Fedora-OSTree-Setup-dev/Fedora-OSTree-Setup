@@ -39,3 +39,51 @@ def fetch_gpu(log: Logger) -> list[str] | None:
                     .split("\n")
             )
         ]
+
+
+def install_gpu_drivers(log: Logger, install_list: list[str]) -> None:
+    """Append the appropriate driver in the list for GPU installation.
+
+    Args:
+        log -- instance of Logger
+
+    Returns:
+        true if the GPU was installed successfully or if there is
+        no driver to install and false if otherwise.
+    """
+
+    #! THIS IS EXPERIMENTAL AND NOT TESTED DUE TO LACK OF HARDWARE
+    #! SHOULD NOT BE CALLED YET ON THE MAIN FUNCTION IN MAIN.PY
+    #! ALTHOUGH THIS CAN BE ENABLED USING A FLAG `ex` IN THE CLI
+    #! BUT NOT IN DEFAULT OPTIONS, DO IT IN YOUR OWN DISCRETION
+
+
+    gpu_list: list[str] | None = fetch_gpu(log)
+
+    if gpu is None:
+        log.logger(
+            "I", "There is no GPU driver to install, skipping ..."
+        )
+        return None
+
+    gpu_drivers: dict[str | list[str], list[str]] = {
+            "nvidia": ["akmod-nvidia", "xorg-x11-drv-nvidia"],
+        }
+
+    for gpu in gpu_list:
+        vendor: str; gpu_info: list[str] | str
+        vendor, *gpu_info = gpu
+
+        match [vendor, gpu_info]:
+            case ["nvidia", *gpu_info]:
+                drv_id: str = "nvidia"
+            case ["intel", *gpu_info]:
+                ...
+            case ["advanced micro devices", *gpu_info]:
+                ...
+            case _:
+                continue
+
+        install_list.extend(gpu_drivers[drv_id])
+
+    return None
