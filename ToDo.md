@@ -79,6 +79,7 @@ the other repos are pretty unnesscary for normal users, this is to mention
 - Speed: use extra script that is generated using appending the names
 - As if want to game and use the custom RPM Proton https://github.com/GloriousEggroll/proton-ge-custom or the flatpak one without patches
 - sudo rpm-ostree override remove libavcodec-free --install exiftool perl-Image-ExifTool clamtk* fail2ban tlp make gcc-c++ qemu-kvm qemu-img qemu-user-static ffmpegthumbs kffmpegthumbnailer #libfprint unrar stacer pip android-tools btfs
+- optional: install java, perl, not preinstalled
 
 `printf "appnamex " >> ~/Fedora-OSTree-setup/rpm-install.sh`
 
