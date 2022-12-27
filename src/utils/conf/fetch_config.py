@@ -6,13 +6,13 @@ from src.utils.log.logger import Logger
 
 
 def fetch_missing_config(
-        log: Logger, conf: str, CONF_PATH: str
+        log: Logger, conf_name: str, CONF_PATH: str
     ) -> None | NoReturn:
     """Downloads the original config file from github if not found.
 
     Args:
         log -- instance of Logger
-        conf -- name of the missing config
+        conf_name -- name of the missing config
         CONF_PATH -- path of the config file
     """
 
@@ -26,7 +26,7 @@ def fetch_missing_config(
             )
             with get(conf_link, stream=True) as d_file:
                 with open(
-                        f"{CONF_PATH}/{conf}", "wb"
+                        f"{CONF_PATH}/{conf_name}", "wb"
                     ) as conf_file:
                     for chunk in d_file.iter_content(chunk_size=1024):
                         if chunk:
@@ -36,10 +36,10 @@ def fetch_missing_config(
                 continue
 
             log.logger(
-                "E", f"{Err}. Cannot download {conf}, aborting ..."
+                "E", f"{Err}. Cannot download {conf_name}, aborting ..."
             )
         else:
-            log.logger("I", f"Sucessfully fetched: {conf}.")
+            log.logger("I", f"Sucessfully fetched: {conf_name}.")
             return None
 
     raise SystemExit
