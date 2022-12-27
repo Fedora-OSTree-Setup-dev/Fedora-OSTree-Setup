@@ -1,13 +1,21 @@
 from rich.console import Console
 
 from src.utils.misc.uinput import uinput
-from src.utils.log.logger import Logger
 
 
 def third_repo_install(
-        log: Logger, console: Console, commands: list[str]
+        console: Console,
+        commands: list[str],
+        rpmfusion_repo: list[str]
     ) -> None:
-    """Install third party repositories."""
+    """Install third party repositories.
+
+    Args:
+        log -- instance of Logger
+        console -- instance of Console
+        commands -- list of commands for execution
+        rpmfusion_repo -- list of packages to be installed
+    """
 
     tp_repo: dict[int, dict[str, str]] = {
             # id and name of the repo and the address
@@ -40,4 +48,14 @@ def third_repo_install(
         if uinput(
                 console, f"Install {info.get('name')} ({info.get('desc')})", 1
             ):
-            commands.append()
+            if info.get("name").lower() == "flathub":
+                commands.append(
+                    (
+                        "flatpak remote-add --if-not-exists flathub "
+                        "https://flathub.org/repo/flathub.flatpakrepo"
+                    )
+                )
+                continue
+            rpmfusion_repo.append(info.get("address"))
+
+    return None
