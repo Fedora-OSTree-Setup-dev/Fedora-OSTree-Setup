@@ -26,5 +26,57 @@
     "FlatSeal": {
             "aid": "com.github.tchx84.Flatseal",
             "simple_description": "GUI for managing flatpak applications permission"
+        },
+        "KeepassXC": {
+            "aid": "org.keepassxc.KeePassXC",
+            "simple_description": "Secure Password manager."
+        },
+    "Cryptomator": {
+            "aid": "org.cryptomator.Cryptomator",
+            "simple_description": "Secure and easy encryption, especially for Cloud storages."
+        },
+    "Easy-Effects": {
+            "aid": "com.github.wwmm.easyeffects",
+            "simple_description": "Modify your PulseAudio sound"
+        },
+    "Sync-Thingy": {
+            "aid": "com.github.zocker_160.SyncThingy",
+            "simple_description": "Sync folders securely between devices, no server."
+        },
+    "XNView MP": {
+            "aid": "com.xnview.XnViewMP",
+            "simple_description": "Image Viewer and editor with many functions"
+        },
+    "Freetube": {
+            "aid": "io.freetubeapp.FreeTube",
+            "simple_description": "Watch YouTube privately with local subscriptions and playlists."
+        },
+    "Inkscape": {
+            "aid": "org.inkscape.Inkscape",
+            "simple_description": "A Vector graphics program"
+        },
+    "GNOME Boxen": {
+            "aid": "org.gnome.Boxes",
+            "simple_description": "Manage fast Virtual machines with a simple interface."
+        },
+    "Filelight": {
+            "aid": "org.kde.filelight ",
+            "simple_description": "View what files consume how much space in a pie chart."
+        },
+    "Kdenlive": {
+            "aid": "org.kde.kdenlive",
+            "simple_description": "Video cut program"
+        },
+    "Onion Share": {
+            "aid": "org.onionshare.OnionShare",
+            "simple_description": "Share files, chat and create websites over Tor"
+        },
+    "qBittorrent": {
+            "aid": "org.qbittorrent.qBittorrent",
+            "simple_description": "Share files decentral with a big community."
+        },
+    "Metadata-cleaner": {
+            "aid": "fr.romainvigier.MetadataCleaner",
+            "simple_description": "Easily remove all identifying information on Images using exiftool."
         }
 }
