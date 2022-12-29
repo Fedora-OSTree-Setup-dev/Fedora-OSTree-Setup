@@ -1,6 +1,6 @@
 # To Do
 
-## 1. GPU driver installation
+## 1. GPU driver installation ([#5](/../../issues/5))
 
 Intel:
 - some drivers missing?
@@ -9,7 +9,7 @@ Nvidia:
 - akmod-nvidia xorg-x11-drv-nvidia
 - OR akmod-nvodia xorg-x11-drv-nvidia-cuda (for CUDA gpus)
 
-## 2. DE based optimizations
+## 2. DE based optimizations ([#11](/../../issues/11))
 
 ### Gnome (Silverblue)
 
@@ -20,7 +20,7 @@ Nvidia:
 - disable the annoying plopping sound
 - ask to uninstall `kmousetool`, `kmag`, `Gwenview` (its kinda useless but easy to use and currently the only app supporting .jxl files)
 
-## 3. Setup third party repo
+## 3. Setup third party repo ([#6](/../../issues/6))
 
 ### flatpak (flathub)
 
@@ -34,9 +34,8 @@ Nvidia:
 - free
 - rpmfusion-nonfree-tainted for `libdvdcss2`
 
-## 4. Install recommended flatpak apps
+## 4. Install recommended flatpak apps ([#7](/../../issues/7))
 
-- For apps refer to #7.
 - Security stuff like ClamAV and Flatseal should be installed nonetheless, maybe one question `do you use the Terminal for Flatpak and Antivirus tasks? y/n`
 
 ## 5. Configure Snap
