@@ -16,7 +16,7 @@ def fetch_missing_config(
         CONF_PATH -- path of the config file
     """
 
-    conf_link: str = ""
+    conf_link: str = "" # link to be added
 
     trial: int
     for trial in range(3):
