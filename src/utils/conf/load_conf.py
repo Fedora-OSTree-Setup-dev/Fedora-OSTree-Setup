@@ -21,7 +21,7 @@ class Conf:
         """Checks the config file if missing or not, if missing fetch the
         original config file from the repository."""
 
-        if isdir(self.CONF_PATH):
+        if not isdir(self.CONF_PATH):
             try:
                 mkdir(self.CONF_PATH)
             except (PermissionError, OSError) as Err:
@@ -32,7 +32,7 @@ class Conf:
 
         conf_name: str
         for conf_name in self.CONF_LIST:
-            if not exists(f"{self.CONF_PATH}/{conf_name}"):
+            if not exists(f"{self.CONF_PATH}/{conf_name}.json"):
                 fetch_missing_config(self.log, conf_name, self.CONF_PATH)
 
         return None
