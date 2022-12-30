@@ -44,7 +44,14 @@ class Conf:
         try:
             parsed_conf: list[dict[str, str | dict[str, str]]] = []
             for conf_name in self.CONF_LIST:
-                parsed_conf.append(load(f"{self.CONF_PATH}/{conf_name}"))
+                with open(
+                        f"{self.CONF_PATH}/{conf_name}.json",
+                        "r",
+                        encoding="utf-8"
+                    ) as t_conf:
+                    parsed_conf.append(
+                        load(t_conf)
+                    )
         except (FileNotFoundError, PermissionError) as Err:
             self.log.logger(
                 "I", f"{Err}. Can't open config file, run the program again."
