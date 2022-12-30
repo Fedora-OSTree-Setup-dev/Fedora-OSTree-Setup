@@ -16,7 +16,20 @@ def fetch_missing_config(
         CONF_PATH -- path of the config file
     """
 
-    conf_link: str = "" # link to be added
+    conf_links: dict[str, str] = {
+            "app_for_install": (
+                    "https://raw.githubusercontent.com/iaacornus/"
+                    "Fedora-OSTree-Setup/devel/config/app_for_install.json"
+                ),
+            "app_for_removal": (
+                    "https://raw.githubusercontent.com/iaacornus/"
+                    "Fedora-OSTree-Setup/devel/config/app_for_removal.json"
+                ),
+            "ostree_setup": (
+                    "https://raw.githubusercontent.com/iaacornus/"
+                    "Fedora-OSTree-Setup/devel/config/ostree_setup.json"
+                )
+        }
 
     trial: int
     for trial in range(3):
