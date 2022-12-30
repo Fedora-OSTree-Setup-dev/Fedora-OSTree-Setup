@@ -9,14 +9,13 @@ from src.utils.log.logger import Logger
 
 
 class Conf:
-    def __init__(self, log: Logger, conf: str) -> None:
+    def __init__(self, log: Logger) -> None:
         self.CONF_PATH: str = f"{Path.home()}/.config/ostree_setup"
         self.CONF_LIST: list[str] = [
                 "app_for_install", "app_for_removal", "ostree_setup"
             ]
 
         self.log: Logger = log
-        self.conf: str = conf
 
     def check_missing(self) -> NoReturn | None:
         """Checks the config file if missing or not, if missing fetch the
