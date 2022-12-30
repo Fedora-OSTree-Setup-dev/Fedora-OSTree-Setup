@@ -9,6 +9,8 @@ from src.utils.log.logger import Logger
 
 
 class Conf:
+    """For parsing of the config file as well as checking."""
+
     def __init__(self, log: Logger) -> None:
         self.CONF_PATH: str = f"{Path.home()}/.config/ostree_setup"
         self.CONF_LIST: list[str] = [
