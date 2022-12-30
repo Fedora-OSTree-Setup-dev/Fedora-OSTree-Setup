@@ -37,9 +37,15 @@ def fetch_missing_config(
             log.logger(
                 "I", "Fetching the missing config file from Github."
             )
+            if not (conf_link := conf_links.get(conf_name, "")):
+                log.logger(
+                    "E", f"Cannot fetch the config: {conf_name}."
+                )
+                raise SystemExit
+
             with get(conf_link, stream=True) as d_file:
                 with open(
-                        f"{CONF_PATH}/{conf_name}", "wb"
+                        f"{CONF_PATH}/{conf_name}.json", "wb"
                     ) as conf_file:
                     for chunk in d_file.iter_content(chunk_size=1024):
                         if chunk:
