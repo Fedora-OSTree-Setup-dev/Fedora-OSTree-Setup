@@ -33,7 +33,7 @@ def execute_command(
         if verbose:
             return_code: int = run(command).returncode
         else:
-            return_code: int = run(command, stdout=DEVNULL).returncode
+            return_code = run(command, stdout=DEVNULL).returncode
 
         if return_code != 0:
             raise CalledProcessError(return_code, command)

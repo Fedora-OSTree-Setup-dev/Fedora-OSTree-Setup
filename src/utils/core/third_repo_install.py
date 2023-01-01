@@ -1,3 +1,5 @@
+from typing import Any
+
 from rich.console import Console
 
 from src.utils.misc.uinput import uinput
@@ -6,7 +8,7 @@ from src.utils.misc.uinput import uinput
 def third_repo_install(
         console: Console,
         commands: list[str],
-        rpmfusion_repo: list[str]
+        rpmfusion_repo: list[Any]
     ) -> None:
     """Install third party repositories.
 
@@ -48,7 +50,7 @@ def third_repo_install(
         if uinput(
                 console, f"Install {repo.get('name')} ({repo.get('desc')})", 1
             ):
-            if repo.get("name").lower() == "flathub":
+            if repo.get("name") == "flathub":
                 commands.append(
                     (
                         "flatpak remote-add --if-not-exists flathub "

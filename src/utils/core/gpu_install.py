@@ -4,11 +4,12 @@ from subprocess import (
     PIPE,
     check_output
 )
+from typing import Optional
 
 from src.utils.log.logger import Logger
 
 
-def fetch_gpu(log: Logger) -> list[str] | None:
+def fetch_gpu(log: Logger) -> Optional[list[list[str]]]:
     """Fetch the GPU of the system.
 
     Args:
@@ -20,7 +21,7 @@ def fetch_gpu(log: Logger) -> list[str] | None:
 
     try:
         lspci_out = Popen(("lspci"), stdout=PIPE)
-        gpu_name: str = check_output(
+        gpu_name: bytes = check_output(
                 ["grep", "-i", "VGA"], stdin=lspci_out.stdout
             )
         lspci_out.wait()
@@ -58,9 +59,9 @@ def install_gpu_drivers(log: Logger, install_list: list[str]) -> None:
     #! BUT NOT IN DEFAULT OPTIONS, DO IT IN YOUR OWN DISCRETION
 
 
-    gpu_list: list[str] | None = fetch_gpu(log)
+    gpu_list: Optional[list[list[str]]] = fetch_gpu(log)
 
-    if gpu is None:
+    if not gpu_list:
         log.logger(
             "I", "There is no GPU driver to install, skipping ..."
         )
@@ -70,11 +71,12 @@ def install_gpu_drivers(log: Logger, install_list: list[str]) -> None:
             "nvidia": ["akmod-nvidia", "xorg-x11-drv-nvidia"],
         }
 
+    gpu: list[str]
     for gpu in gpu_list:
-        vendor: str; gpu_info: list[str] | str
+        vendor: str; gpu_info: list[str]
         vendor, *gpu_info = gpu
 
-        match [vendor, gpu_info]:
+        match [vendor, *gpu_info]:
             case ["nvidia", *gpu_info]:
                 drv_id: str = "nvidia"
             case ["intel", *gpu_info]:
