@@ -1,5 +1,3 @@
-from typing import NoReturn
-
 from src.utils.shared.exec import execute_command
 from src.utils.log.logger import Logger
 
@@ -9,7 +7,7 @@ def uninstall_apps(
         app_list: list[str],
         verbose: bool = False,
         break_proc: bool = False
-    ) -> None | NoReturn:
+    ) -> None:
     """Uninstall preinstalled flatpak applications.
 
     Args:
