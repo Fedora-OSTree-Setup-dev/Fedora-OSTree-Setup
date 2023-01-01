@@ -1,12 +1,10 @@
-from typing import Optional
-
 from rich.console import Console
 from rich.panel import Panel
 from rich.align import Align
 from rich.text import Text
 
 
-def title_banner(banner_text: str, banner_title: Optional[str] = None) -> None:
+def title_banner(banner_text: str, banner_title: str) -> None:
     """For displaying of title in major operation.
 
     Args:

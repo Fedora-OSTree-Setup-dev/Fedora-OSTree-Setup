@@ -55,13 +55,13 @@ class AppInstall:
                 their application id (aid) and description
         """
 
-        appname: str
+        index: int; appname: str
         for index, appname in app_index.items():
             self.console.print(
                 (
                     f"[bold cyan]{index:4}[/bold cyan] "
                     f"[bold]{appname}[/bold] -- "
-                    f"{app_list.get(appname).get('sdesc')}"
+                    f"{app_list.get(appname).get('sdesc')}" # type: ignore
                 )
             )
 
@@ -83,8 +83,8 @@ class AppInstall:
 
         aindex: int
         for aindex in selected_app:
-            sapp_id: str = self.APP_LIST.get(
-                    self.FLATPAK_APP_INDEX.get(aindex)).get("aid"
+            sapp_id: str = self.FLATPAK_APP_LIST.get( # type: ignore
+                    self.FLATPAK_APP_INDEX.get(aindex)).get("aid" # type: ignore
                 )
             install_cmd: list[str] = [
                     "flatpak",
