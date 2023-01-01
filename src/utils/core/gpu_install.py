@@ -20,7 +20,7 @@ def fetch_gpu(log: Logger) -> Optional[list[list[str]]]:
     """
 
     try:
-        lspci_out = Popen(("lspci"), stdout=PIPE)
+        lspci_out = Popen(["lspci"], stdout=PIPE)
         gpu_name: bytes = check_output(
                 ["grep", "-i", "VGA"], stdin=lspci_out.stdout
             )
