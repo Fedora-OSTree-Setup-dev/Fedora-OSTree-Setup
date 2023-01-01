@@ -18,13 +18,13 @@ def title_banner(banner_text: str, banner_title: Optional[str] = None) -> None:
         Panel(
             Align(
                 Text(
-                    banner_text,
+                    banner_text.capitalize(),
                     justify="center"
                 ),
                 vertical="middle",
                 align="center"
             ),
-            title=f"[bold]{banner_title}[/bold]"
+            title=f"[bold]{banner_title.upper()}[/bold]"
         )
     )
 
