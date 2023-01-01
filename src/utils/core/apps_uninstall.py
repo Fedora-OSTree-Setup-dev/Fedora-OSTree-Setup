@@ -16,6 +16,7 @@ def uninstall_apps(
         log -- instance of Logger
         app_list -- list of apps to uninstall
         verbose -- whether to show command output or not
+        break_proc -- whether to raise systemexit or not
     """
 
     app: str

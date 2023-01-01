@@ -16,6 +16,8 @@ def execute_command(
     Args:
         log -- Logger instance
         command -- command to execute with arguments
+        verbose -- whether to show command output or not
+        break_proc -- whether to raise systemexit or not
 
     Returns:
         None or raise system exit
