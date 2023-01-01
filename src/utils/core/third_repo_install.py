@@ -44,11 +44,11 @@ def third_repo_install(
                 }
         }
 
-    for info in tp_repo.values():
+    for repo in tp_repo.values():
         if uinput(
-                console, f"Install {info.get('name')} ({info.get('desc')})", 1
+                console, f"Install {repo.get('name')} ({repo.get('desc')})", 1
             ):
-            if info.get("name").lower() == "flathub":
+            if repo.get("name").lower() == "flathub":
                 commands.append(
                     (
                         "flatpak remote-add --if-not-exists flathub "
@@ -56,6 +56,6 @@ def third_repo_install(
                     )
                 )
                 continue
-            rpmfusion_repo.append(info.get("address"))
+            rpmfusion_repo.append(repo.get("address"))
 
     return None
