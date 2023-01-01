@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-mypy --strict $(git ls-files "*.py")
+mypy --strict $(git ls-files "*.py") --explicit-package-base
