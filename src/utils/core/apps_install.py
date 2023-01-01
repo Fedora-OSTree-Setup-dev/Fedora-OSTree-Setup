@@ -1,10 +1,8 @@
-from rich.panel import Panel
-from rich.align import Align
-from rich.text import Text
 from rich.console import Console
 
 from src.utils.shared.exec import execute_command
 from src.utils.shared.uinput import uinput
+from src.utils.shared.title_banner import title_banner
 from src.utils.shared.log.logger import Logger
 
 
@@ -28,18 +26,9 @@ def app_install(
             )
         }
 
-    console.print(
-        Panel(
-            Align(
-                Text(
-                    "Install applications from flathub",
-                    justify="center"
-                ),
-                vertical="middle",
-                align="center"
-            ),
-            title="[bold]Recommended Flatpak Applications[/bold]"
-        )
+    title_banner(
+        "installation of recommended apps",
+        "recommended apps flatpak"
     )
 
     appname: str
