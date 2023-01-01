@@ -5,7 +5,10 @@ from src.utils.log.logger import Logger
 
 
 def uninstall_apps(
-        log: Logger, app_list: list[str], verbose: bool = False
+        log: Logger,
+        app_list: list[str],
+        verbose: bool = False,
+        break_proc: bool = False
     ) -> None | NoReturn:
     """Uninstall preinstalled flatpak applications.
 
@@ -25,6 +28,6 @@ def uninstall_apps(
                 "--system",
                 "--assumeyes"
             ]
-        execute_command(log, uninstall_cmd, verbose)
+        execute_command(log, uninstall_cmd, verbose, break_proc)
 
     return None
