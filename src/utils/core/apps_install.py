@@ -18,6 +18,7 @@ def app_install(
         log -- instance of Logger
         app_for_install -- lists of the recommended applications including
             their application id (aid) and description
+        verbose -- whether to display the process output or not
     """
 
     appindex: dict[int, str] = {
