@@ -26,7 +26,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install mypy==0.991
         if [ -f REQUIREMENTS ]; then pip install -r REQUIREMENTS; fi
-        mypy --install-types
+        if [ -f DEV_REQUIREMENTS ]; then pip install -r DEV_REQUIREMENTS; fi
     - name: Run mypy type check
       run: |
         mypy --strict $(git ls-files "*.py") --explicit-package-base
