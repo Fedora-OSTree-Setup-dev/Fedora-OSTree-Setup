@@ -2,7 +2,7 @@ from shutil import which
 from subprocess import run, CalledProcessError, DEVNULL
 from typing import NoReturn
 
-from src.utils.log.logger import Logger
+from src.utils.shared.log.logger import Logger
 
 
 def execute_command(

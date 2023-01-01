@@ -5,7 +5,7 @@ from json import load
 from typing import NoReturn
 
 from src.utils.conf.fetch_config import fetch_missing_config
-from src.utils.log.logger import Logger
+from src.utils.shared.log.logger import Logger
 
 
 class Conf:

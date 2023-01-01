@@ -3,8 +3,8 @@ from typing import Optional
 
 from rich.console import Console
 
-from src.utils.misc.uinput import uinput
-from src.utils.log.logger import Logger
+from src.utils.shared.uinput import uinput
+from src.utils.shared.log.logger import Logger
 
 
 def fetch_env(log: Logger, console: Console, env_var: str) -> Optional[str]:

@@ -1,6 +1,6 @@
 from argparse import ArgumentParser
 
-from src.utils.log.logger import Logger
+from src.utils.shared.log.logger import Logger
 
 class Cli:
     """Commandline interface of the program."""

@@ -1,5 +1,5 @@
 from src.utils.shared.exec import execute_command
-from src.utils.log.logger import Logger
+from src.utils.shared.log.logger import Logger
 
 
 def uninstall_apps(

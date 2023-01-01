@@ -6,7 +6,7 @@ from subprocess import (
 )
 from typing import Optional
 
-from src.utils.log.logger import Logger
+from src.utils.shared.log.logger import Logger
 
 
 def fetch_gpu(log: Logger) -> Optional[list[list[str]]]:

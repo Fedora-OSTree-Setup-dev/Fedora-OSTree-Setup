@@ -2,7 +2,7 @@ from typing import NoReturn
 
 from requests import get
 
-from src.utils.log.logger import Logger
+from src.utils.shared.log.logger import Logger
 
 
 def fetch_missing_config(

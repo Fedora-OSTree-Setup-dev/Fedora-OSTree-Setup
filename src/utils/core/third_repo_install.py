@@ -2,7 +2,7 @@ from typing import Any
 
 from rich.console import Console
 
-from src.utils.misc.uinput import uinput
+from src.utils.shared.uinput import uinput
 
 
 def third_repo_install(
