@@ -3,7 +3,7 @@ from typing import Optional
 
 from rich.console import Console
 
-from src.utils.shared.uinput import uinput
+from src.utils.shared.misc.uinput import uinput
 from src.utils.shared.log.logger import Logger
 
 

@@ -1,8 +1,8 @@
 from rich.console import Console
 
 from src.utils.shared.exec import execute_command
-from src.utils.shared.uinput import uinput
-from src.utils.shared.title_banner import title_banner
+from src.utils.shared.misc.uinput import uinput
+from src.utils.shared.misc.title_banner import title_banner
 from src.utils.shared.log.logger import Logger
 
 
