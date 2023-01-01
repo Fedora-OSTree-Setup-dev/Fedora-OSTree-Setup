@@ -6,7 +6,10 @@ from src.utils.log.logger import Logger
 
 
 def execute_command(
-        log: Logger, command: list[str], verbose: bool = False
+        log: Logger,
+        command: list[str],
+        verbose: bool = False,
+        break_proc: bool = False
     ) -> NoReturn | None:
     """For command execution/system calls with error handling
 
@@ -39,9 +42,11 @@ def execute_command(
             "E",
             (
                 f"{Err} encountered, cannot execute"
-                " command: {command}, aborting ..."
+                " command: {command} ..."
             )
         )
-        raise SystemExit
+
+        if break_proc:
+            raise SystemExit
 
     return None
