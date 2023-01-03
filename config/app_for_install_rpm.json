@@ -1,0 +1,19 @@
+[
+    "exiftool",
+    "perl-Image-ExifTool",
+    "clamtk*",
+    "fail2ban",
+    "tlp",
+    "make",
+    "gcc-c++",
+    "qemu-kvm",
+    "qemu-img",
+    "qemu-user-static",
+    "ffmpegthumbs",
+    "kffmpegthumbnailer",
+    "unrar",
+    "stacer",
+    "python-pip",
+    "android-tools",
+    "btfs"
+]
