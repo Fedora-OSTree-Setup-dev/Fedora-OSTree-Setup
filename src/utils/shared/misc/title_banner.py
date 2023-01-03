@@ -16,7 +16,7 @@ def title_banner(banner_text: str, banner_title: str) -> None:
         Panel(
             Align(
                 Text(
-                    banner_text.capitalize(),
+                    banner_text.upper(),
                     justify="center"
                 ),
                 vertical="middle",
