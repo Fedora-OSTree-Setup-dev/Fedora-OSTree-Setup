@@ -1,62 +1,47 @@
 {
     "Calculator": {
-            "aid": "org.gnome.Calculator",
-            "sdesc": null
+            "aid": "org.gnome.Calculator"
         },
     "Calendar": {
-            "aid": "org.gnome.Calendar",
-            "sdesc": null
+            "aid": "org.gnome.Calendar"
         },
     "Characters": {
-            "aid": "org.gnome.Characters",
-            "sdesc": null
+            "aid": "org.gnome.Characters"
         },
     "Connections": {
-            "aid": "org.gnome.Connections",
-            "sdesc": null
+            "aid": "org.gnome.Connections"
         },
     "Contacts": {
-            "aid": "org.gnome.Contacts",
-            "sdesc": null
+            "aid": "org.gnome.Contacts"
         },
     "Evince": {
-            "aid": "org.gnome.Evince",
-            "sdesc": null
+            "aid": "org.gnome.Evince"
         },
     "Extensions": {
-            "aid": "org.gnome.Extensions",
-            "sdesc": null
+            "aid": "org.gnome.Extensions"
         },
     "Logs": {
-            "aid": "org.gnome.Logs",
-            "sdesc": null
+            "aid": "org.gnome.Logs"
         },
     "Maps": {
-            "aid": "org.gnome.Maps",
-            "sdesc": null
+            "aid": "org.gnome.Maps"
         },
     "Text Editor": {
-            "aid": "org.gnome.TextEditor",
-            "sdesc": null
+            "aid": "org.gnome.TextEditor"
         },
     "Weather": {
-            "aid": "org.gnome.Weather",
-            "sdesc": null
+            "aid": "org.gnome.Weather"
         },
     "Disk Usage Analyzer": {
-            "aid": "org.gnome.baobab",
-            "sdesc": null
+            "aid": "org.gnome.baobab"
         },
     "Clocks": {
-            "aid": "org.gnome.Clocks",
-            "sdesc": null
+            "aid": "org.gnome.Clocks"
         },
     "Image Viewer": {
-            "aid": "org.gnome.eog",
-            "sdesc": null
+            "aid": "org.gnome.eog"
         },
     "Fonts Viewer": {
-            "aid": "org.gnome.fonts-viewer",
-            "sdesc": null
+            "aid": "org.gnome.fonts-viewer"
         }
 }
