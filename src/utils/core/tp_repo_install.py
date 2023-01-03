@@ -43,6 +43,26 @@ def tp_repo_install(
                     "name": "Flathub",
                     "desc": "Unfiltered repository for flatpaks.",
                     "address": "https://flathub.org/repo/flathub.flatpakrepo"
+                },
+            4: {
+                    "name": "Fedora OCI",
+                    "desc": "", #? what's this for?,
+                    "address": "oci+https://registry.fedoraproject.org"
+                },
+            5: {
+                    "name": "KDE",
+                    "desc": "KDE Applications.",
+                    "address": (
+                            "https://distribute.kde.org/kdeapps.flatpakrepo"
+                        )
+                },
+            6: {
+                    "name": "GNOME Nightly",
+                    "desc": "For cutting edge builds from GNOME.",
+                    "address": (
+                            "https://nightly.gnome.org/"
+                            "gnome-nightly.flatpakrepo"
+                        )
                 }
         }
 
