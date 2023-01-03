@@ -5,7 +5,7 @@ from rich.console import Console
 from src.utils.shared.misc.uinput import uinput
 
 
-def third_repo_install(
+def tp_repo_install(
         console: Console,
         commands: list[str],
         rpmfusion_repo: list[Any]
