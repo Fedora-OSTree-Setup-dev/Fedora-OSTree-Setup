@@ -1,47 +1,17 @@
 {
-    "Calculator": {
-            "aid": "org.gnome.Calculator"
-        },
-    "Calendar": {
-            "aid": "org.gnome.Calendar"
-        },
-    "Characters": {
-            "aid": "org.gnome.Characters"
-        },
-    "Connections": {
-            "aid": "org.gnome.Connections"
-        },
-    "Contacts": {
-            "aid": "org.gnome.Contacts"
-        },
-    "Evince": {
-            "aid": "org.gnome.Evince"
-        },
-    "Extensions": {
-            "aid": "org.gnome.Extensions"
-        },
-    "Logs": {
-            "aid": "org.gnome.Logs"
-        },
-    "Maps": {
-            "aid": "org.gnome.Maps"
-        },
-    "Text Editor": {
-            "aid": "org.gnome.TextEditor"
-        },
-    "Weather": {
-            "aid": "org.gnome.Weather"
-        },
-    "Disk Usage Analyzer": {
-            "aid": "org.gnome.baobab"
-        },
-    "Clocks": {
-            "aid": "org.gnome.Clocks"
-        },
-    "Image Viewer": {
-            "aid": "org.gnome.eog"
-        },
-    "Fonts Viewer": {
-            "aid": "org.gnome.fonts-viewer"
-        }
+    "Calculator": "org.gnome.Calculator",
+    "Calendar": "org.gnome.Calendar",
+    "Characters": "org.gnome.Characters",
+    "Connections": "org.gnome.Connections",
+    "Contacts": "org.gnome.Contacts",
+    "Evince": "org.gnome.Evince",
+    "Extensions": "org.gnome.Extensions",
+    "Logs": "org.gnome.Logs",
+    "Maps": "org.gnome.Maps",
+    "Text Editor": "org.gnome.TextEditor",
+    "Weather": "org.gnome.Weather",
+    "Disk Usage Analyzer": "org.gnome.baobab",
+    "Clocks": "org.gnome.Clocks",
+    "Image Viewer": "org.gnome.eog",
+    "Fonts Viewer": "org.gnome.fonts-viewer"
 }
