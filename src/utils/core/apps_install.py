@@ -11,22 +11,25 @@ class AppInstall:
             self,
             log: Logger,
             console: Console,
-            app_for_install: list[dict[str, dict[str, str]]],
+            flatpak_list: dict[str, dict[str, str]],
+            rpm_list: dict[str, dict[str, str]],
             verbose: bool = False
         ) -> None:
         """
         Args:
             log -- instance of Logger
             console -- instace of console
-            app_for_install -- lists of the recommended applications
+            flatpak_list -- lists of the recommended applications
+                including their application id (aid) and description
+            rpm_list -- lists of the recommended applications
                 including their application id (aid) and description
             verbose -- whether to display the process output or not
         """
 
         self.log: Logger = log
         self.console: Console = console
-        self.FLATPAK_APP_LIST: dict[str, dict[str, str]] = app_for_install[0]
-        self.RPM_APP_LIST: dict[str, dict[str, str]] = app_for_install[1]
+        self.FLATPAK_APP_LIST: dict[str, dict[str, str]] = flatpak_list
+        self.RPM_APP_LIST: dict[str, dict[str, str]] = rpm_list
         self.verbose: bool = verbose
 
         self.FLATPAK_APP_INDEX: dict[int, str] = {
@@ -70,10 +73,24 @@ class AppInstall:
     def app_install(self) -> None:
         """For installation of recommended program selected by user."""
 
-        title_banner(
-            "installation of recommended apps", "recommended apps flatpak"
-        )
-        self._enum_apps(self.FLATPAK_APP_INDEX, self.FLATPAK_APP_LIST)
+
+        for apptype, applist in {
+                "flatpak": {
+                        "index": self.FLATPAK_APP_INDEX,
+                        "list": self.FLATPAK_APP_LIST
+                    },
+                "rpm": {
+                        "index": self.RPM_APP_INDEX,
+                        "list": self.RPM_APP_LIST
+                    }
+            }.items():
+            title_banner(
+                "installation of recommended apps",
+                f"recommended apps ({apptype})"
+            )
+            self._enum_apps(
+                applist.get("index"), applist.get("list")
+            )
 
         selected_app: list[int] = uinput(
                 self.console,
