@@ -9,7 +9,7 @@ from src.misc.alias import ProgData, ProgIndex
 
 
 
-class AppInstall:
+class Install:
     def __init__(
             self,
             log: Logger,
@@ -48,24 +48,24 @@ class AppInstall:
                 )
             }
 
-    def _enum_apps(
+    def _enum_prog(
             self,
             progindex: ProgIndex,
             progdata: ProgData,
-            apptype: str
+            progtype: str
         ) -> Any:
-        """Enumerate the apps in the list and print out with a format.
+        """Enumerate the programs in the list and print out with a format.
 
         Args:
             progindex -- index of applications and their name
             progdata -- lists of the recommended applications including
                 their application id (aid) and description
-            apptype -- type of application, where flatpak or rpm
+            progtype -- type of application, where flatpak or rpm
         """
 
         section(
-            "installation of recommended apps",
-            f"recommended apps ({apptype})"
+            "installation of recommended programs",
+            f"recommended programs ({progtype})"
         )
 
         index: int; appname: str
@@ -84,20 +84,20 @@ class AppInstall:
             2
         )
 
-    def app_install(self) -> tuple[list[list[str]], list[str]]:
+    def install(self) -> tuple[list[list[str]], list[str]]:
         """For installation of recommended program selected by user."""
 
         t_fcmd: list[list[str]] = []
         t_rprog: list[str] = []
 
-        # fprog_index -> flatpak apps index
-        # rappsindex -> rpm apps index
+        # fprog_index -> flatpak programs index
+        # rappsindex -> rpm programs index
         fprog_index: int; rprog_index: int
 
         #* FOR FLATPAK PROGRAMS
         #* appends the flatpak commands that needs to be executed in
         #* flatpak_cmd_list for a single execution of commands
-        for fprog_index in self._enum_apps(
+        for fprog_index in self._enum_prog(
                 self.FPROG_INDEX, self.FPROG_ARR, "flatpak"
             ):
             fapp_id: str = self.FPROG_ARR.get(
@@ -115,7 +115,7 @@ class AppInstall:
 
         #* FOR RPM PROGRAM
         #* appends the list of name of the selected rpm applications
-        for rprog_index in self._enum_apps(
+        for rprog_index in self._enum_prog(
                 self.RPROG_INDEX, self.RPROG_ARR, "rpm"
             ):
             rapp_id: str = self.RPROG_ARR.get( # type: ignore
