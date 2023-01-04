@@ -1,22 +1,14 @@
-from typing import Any
-
 from rich.console import Console
 
 from src.utils.shared.misc.uinput import uinput
 
 
-def tp_repo_install(
-        console: Console,
-        commands: list[str],
-        rpmfusion_repo: list[Any]
-    ) -> None:
+def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
     """Install third party repositories.
 
     Args:
         log -- instance of Logger
         console -- instance of Console
-        commands -- list of commands for execution
-        rpmfusion_repo -- list of packages to be installed
     """
 
     tp_repo: dict[int, dict[str, str]] = {
@@ -66,18 +58,21 @@ def tp_repo_install(
                 }
         }
 
+    t_fcmd: list[list[str]] = []
+    t_rfusion_install_arr: list[str] = []
+
     for repo in tp_repo.values():
         if uinput(
                 console, f"Install {repo.get('name')} ({repo.get('desc')})", 1
             ):
             if repo.get("name") == "flathub":
-                commands.append(
+                t_fcmd.append(
                     (
                         "flatpak remote-add --if-not-exists flathub "
                         "https://flathub.org/repo/flathub.flatpakrepo"
                     )
                 )
                 continue
-            rpmfusion_repo.append(repo.get("address"))
+            t_rfusion_install_arr.append(repo.get("address"))
 
-    return None
+    return t_fcmd, t_rfusion_install_arr
