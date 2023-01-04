@@ -42,15 +42,15 @@ def fetch_gpu(log: Logger) -> Optional[list[list[str]]]:
         ]
 
 
-def install_gpu_drivers(log: Logger, install_list: list[str]) -> None:
+def install_gpu_drivers(log: Logger) -> list[str]:
     """Append the appropriate driver in the list for GPU installation.
 
     Args:
         log -- instance of Logger
 
     Returns:
-        true if the GPU was installed successfully or if there is
-        no driver to install and false if otherwise.
+        true if the GPU was installed successfully or a temporary list
+        for the appropriate gpu drivers
     """
 
     #! THIS IS EXPERIMENTAL AND NOT TESTED DUE TO LACK OF HARDWARE
@@ -58,8 +58,9 @@ def install_gpu_drivers(log: Logger, install_list: list[str]) -> None:
     #! ALTHOUGH THIS CAN BE ENABLED USING A FLAG `ex` IN THE CLI
     #! BUT NOT IN DEFAULT OPTIONS, DO IT IN YOUR OWN DISCRETION
 
-
     gpu_arr: Optional[list[list[str]]] = fetch_gpu(log)
+
+    t_gpu_drvs_arr: list[str] = []
 
     if not gpu_arr:
         log.logger(
@@ -83,9 +84,7 @@ def install_gpu_drivers(log: Logger, install_list: list[str]) -> None:
                 ...
             case ["advanced micro devices", *gpu_info]:
                 ...
-            case _:
-                continue
 
-        install_list.extend(gpu_drivers[drv_id])
+        t_gpu_drvs_arr.append(gpu_drivers[drv_id])
 
-    return None
+    return t_gpu_drvs_arr
