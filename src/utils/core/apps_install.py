@@ -50,7 +50,9 @@ class AppInstall:
     def _enum_apps(
             self,
             app_index: AppIndex,
-            app_list: AppData
+            app_list: AppData,
+            apptype: str,
+
         ) -> None:
         """Enumerate the apps in the list and print out with a format.
 
@@ -59,6 +61,11 @@ class AppInstall:
             app_list -- lists of the recommended applications including
                 their application id (aid) and description
         """
+
+        title_banner(
+            "installation of recommended apps",
+            f"recommended apps ({apptype})"
+        )
 
         index: int; appname: str
         for index, appname in app_index.items():
@@ -70,47 +77,26 @@ class AppInstall:
                 )
             )
 
-        return None
+        return uinput(
+            self.console,
+            "Input the number of applications to install",
+            2
+        )
 
     def app_install(self) -> None:
         """For installation of recommended program selected by user."""
 
-
-        for apptype, applist in {
-                "flatpak": {
-                        "index": self.FLATPAK_APP_INDEX,
-                        "list": self.FLATPAK_APP_LIST
-                    },
-                "rpm": {
-                        "index": self.RPM_APP_INDEX,
-                        "list": self.RPM_APP_LIST
-                    }
-            }.items():
-            title_banner(
-                "installation of recommended apps",
-                f"recommended apps ({apptype})"
-            )
-            self._enum_apps(
-                applist.get("index"), applist.get("list")
-            )
-
-        selected_app: list[int] = uinput(
-                self.console,
-                "Input the number of applications to install",
-                2
-            )
-
-        aindex: int
-        for aindex in selected_app:
-            sapp_id: str = self.FLATPAK_APP_LIST.get( # type: ignore
-                    self.FLATPAK_APP_INDEX.get(aindex)).get("aid" # type: ignore
-                )
-            install_cmd: list[str] = [
-                    "flatpak",
-                    "install",
-                    "flatpak",
-                    sapp_id
-                ]
-            execute_command(self.log, install_cmd, self.verbose)
-
-        return None
+#         aindex: int
+#         for aindex in selected_app:
+#             sapp_id: str = self.FLATPAK_APP_LIST.get( # type: ignore
+#                     self.FLATPAK_APP_INDEX.get(aindex)).get("aid" # type: ignore
+#                 )
+#             install_cmd: list[str] = [
+#                     "flatpak",
+#                     "install",
+#                     "flatpak",
+#                     sapp_id
+#                 ]
+#             execute_command(self.log, install_cmd, self.verbose)
+#
+#         return None
