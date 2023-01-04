@@ -68,7 +68,7 @@ def install_gpu_drivers(log: Logger) -> list[str]:
         )
         return None
 
-    gpu_drivers: dict[str | list[str], list[str]] = {
+    gpu_drv: dict[str | list[str], list[str]] = {
             "nvidia": ["akmod-nvidia", "xorg-x11-drv-nvidia"],
         }
 
@@ -85,6 +85,6 @@ def install_gpu_drivers(log: Logger) -> list[str]:
             case ["advanced micro devices", *gpu_info]:
                 ...
 
-        t_gpu_drvs_arr.append(gpu_drivers[drv_id])
+        t_gpu_drvs_arr.append(gpu_drv[drv_id])
 
     return t_gpu_drvs_arr
