@@ -4,6 +4,8 @@ from src.utils.shared.exec import execute_command
 from src.utils.shared.misc.uinput import uinput
 from src.utils.shared.misc.title_banner import title_banner
 from src.utils.shared.log.logger import Logger
+from src.misc import AppData, AppIndex # type: ignore
+
 
 
 class AppInstall:
@@ -11,8 +13,8 @@ class AppInstall:
             self,
             log: Logger,
             console: Console,
-            flatpak_list: dict[str, dict[str, str]],
-            rpm_list: dict[str, dict[str, str]],
+            flatpak_list: AppData,
+            rpm_list: AppData,
             verbose: bool = False
         ) -> None:
         """
@@ -28,17 +30,17 @@ class AppInstall:
 
         self.log: Logger = log
         self.console: Console = console
-        self.FLATPAK_APP_LIST: dict[str, dict[str, str]] = flatpak_list
-        self.RPM_APP_LIST: dict[str, dict[str, str]] = rpm_list
+        self.FLATPAK_APP_LIST: AppData = flatpak_list
+        self.RPM_APP_LIST: AppData = rpm_list
         self.verbose: bool = verbose
 
-        self.FLATPAK_APP_INDEX: dict[int, str] = {
+        self.FLATPAK_APP_INDEX: AppIndex = {
                 index: aid for index, aid in zip(
                     range(len(self.FLATPAK_APP_LIST.items())),
                     self.FLATPAK_APP_LIST.keys()
                 )
             }
-        self.RPM_APP_INDEX: dict[int, str] = {
+        self.RPM_APP_INDEX: AppIndex = {
                 index: aid for index, aid in zip(
                     range(len(self.RPM_APP_LIST.items())),
                     self.RPM_APP_LIST.keys()
@@ -47,8 +49,8 @@ class AppInstall:
 
     def _enum_apps(
             self,
-            app_index: dict[int, str],
-            app_list: dict[str, dict[str, str]]
+            app_index: AppIndex,
+            app_list: AppData
         ) -> None:
         """Enumerate the apps in the list and print out with a format.
 
