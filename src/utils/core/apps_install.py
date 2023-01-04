@@ -2,7 +2,6 @@ from typing import Any
 
 from rich.console import Console
 
-from src.utils.shared.exec import execute_command
 from src.utils.shared.misc.uinput import uinput
 from src.utils.shared.misc.title_banner import title_banner
 from src.utils.shared.log.logger import Logger
@@ -17,8 +16,6 @@ class AppInstall:
             console: Console,
             flatpak_list: AppData,
             rpm_list: AppData,
-            flatpak_cmd_list: list[str],
-            rpm_install_list: list[str],
             verbose: bool = False
         ) -> None:
         """
@@ -29,9 +26,6 @@ class AppInstall:
                 including their application id (aid) and description
             rpm_list -- lists of the recommended applications
                 including their application id (aid) and description
-            flatpak_cmd_list -- all commands related to flatpak
-            rpm_install_list -- list where the rpm that will be install
-                is contained
             verbose -- whether to display the process output or not
         """
 
@@ -39,8 +33,6 @@ class AppInstall:
         self.console: Console = console
         self.FLATPAK_APP_LIST: AppData = flatpak_list
         self.RPM_APP_LIST: AppData = rpm_list
-        self.rpm_to_install: list[str] = rpm_install_list
-        self.flatpak_cmd_list: list[str] = flatpak_cmd_list
         self.verbose: bool = verbose
 
         self.FLATPAK_APP_INDEX: AppIndex = {
@@ -92,8 +84,11 @@ class AppInstall:
             2
         )
 
-    def app_install(self) -> tuple[list[str], list[str]]:
+    def app_install(self) -> tuple[list[list[str]], list[str]]:
         """For installation of recommended program selected by user."""
+
+        finstall_cmd: list[list[str]] = []
+        rpm_install_arr: list[str] = []
 
         # fappsindex -> flatpak apps index
         # rappsindex -> rpm apps index
@@ -115,8 +110,8 @@ class AppInstall:
                     fapp_id,
                     "--assumeyes"
                 ]
+            finstall_cmd.append(install_cmd)
 
-            self.flatpak_cmd_list.append(install_cmd)
 
         #* FOR RPM PROGRAM
         #* appends the list of name of the selected rpm applications
@@ -126,6 +121,6 @@ class AppInstall:
             rapp_id: str = self.RPM_APP_LIST.get( # type: ignore
                     self.RPM_APP_INDEX.get(rappindex) # type: ignore
                 ).get("aid")
-            self.rpm_to_install.append(rapp_id)
+            rpm_install_arr.append(rapp_id)
 
-        return self.rpm_to_install
+        return finstall_cmd, rpm_install_arr
