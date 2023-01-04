@@ -44,11 +44,11 @@ def fetch_missing_config(
     for trial in range(3):
         try:
             log.logger(
-                "I", "Fetching the missing config file from Github."
+                "I", f"Fetching the config file ({conf_name}) from Github."
             )
-            if not (conf_link := conf_links.get(conf_name, "")):
+            if not (conf_link := conf_links.get(conf_name)): # type: ignore
                 log.logger(
-                    "E", f"Cannot fetch the config: {conf_name}."
+                    "E", f"Cannot fetch the config: {conf_name}, aborting ..."
                 )
                 raise SystemExit
 
