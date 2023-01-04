@@ -59,9 +59,9 @@ def install_gpu_drivers(log: Logger, install_list: list[str]) -> None:
     #! BUT NOT IN DEFAULT OPTIONS, DO IT IN YOUR OWN DISCRETION
 
 
-    gpu_list: Optional[list[list[str]]] = fetch_gpu(log)
+    gpu_arr: Optional[list[list[str]]] = fetch_gpu(log)
 
-    if not gpu_list:
+    if not gpu_arr:
         log.logger(
             "I", "There is no GPU driver to install, skipping ..."
         )
@@ -72,7 +72,7 @@ def install_gpu_drivers(log: Logger, install_list: list[str]) -> None:
         }
 
     gpu: list[str]
-    for gpu in gpu_list:
+    for gpu in gpu_arr:
         vendor: str; gpu_info: list[str]
         vendor, *gpu_info = gpu
 

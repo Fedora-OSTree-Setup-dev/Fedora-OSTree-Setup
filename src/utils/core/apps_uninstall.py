@@ -1,8 +1,8 @@
-def uninstall_apps(app_list: list[str]) -> list[list[str]]:
+def uninstall_apps(prog_arr: list[str]) -> list[list[str]]:
     """Uninstall preinstalled flatpak applications.
 
     Args:
-        app_list -- list of apps to uninstall
+        prog_arr -- list of apps to uninstall
         flatpak_cmd_list -- all commands related to flatpak
 
     Returns:
@@ -11,12 +11,12 @@ def uninstall_apps(app_list: list[str]) -> list[list[str]]:
 
     t_funinstall_cmds: list[list[str]] = []
 
-    app: str
-    for app in app_list:
+    prog: str
+    for prog in prog_arr:
         uninstall_cmd: list[str] = [
                 "flatpak",
                 "uninstall",
-                app,
+                prog,
                 "--delete-data",
                 "--system",
                 "--assumeyes"
