@@ -32,24 +32,24 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
                         )
                 },
             3: {
-                    "name": "Flathub",
+                    "name": "f_Flathub",
                     "desc": "Unfiltered repository for flatpaks.",
                     "address": "https://flathub.org/repo/flathub.flatpakrepo"
                 },
             4: {
-                    "name": "Fedora OCI",
+                    "name": "f_Fedora OCI",
                     "desc": "", #? what's this for?,
                     "address": "oci+https://registry.fedoraproject.org"
                 },
             5: {
-                    "name": "KDE",
+                    "name": "f_KDE",
                     "desc": "KDE Applications.",
                     "address": (
                             "https://distribute.kde.org/kdeapps.flatpakrepo"
                         )
                 },
             6: {
-                    "name": "GNOME Nightly",
+                    "name": "f_GNOME Nightly",
                     "desc": "For cutting edge builds from GNOME.",
                     "address": (
                             "https://nightly.gnome.org/"
@@ -65,14 +65,19 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
         if uinput(
                 console, f"Install {repo.get('name')} ({repo.get('desc')})", 1
             ):
-            if repo.get("name") == "flathub":
+            repo_name: str = repo.get("name") # type: ignore
+            if repo_name.startswith("f_"):
                 t_fcmd.append(
-                    (
-                        "flatpak remote-add --if-not-exists flathub "
-                        "https://flathub.org/repo/flathub.flatpakrepo"
-                    )
+                    [
+                        "flatpak",
+                        "remote-add",
+                        "--if-not-exists",
+                        repo.get("name"), # type: ignore
+                        repo.get("address") # type: ignore
+                    ]
                 )
                 continue
-            t_rfusion.append(repo.get("address"))
+
+            t_rfusion.append(repo.get("address")) # type: ignore
 
     return t_fcmd, t_rfusion

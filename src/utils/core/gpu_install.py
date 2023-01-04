@@ -42,7 +42,7 @@ def fetch_gpu(log: Logger) -> Optional[list[list[str]]]:
         ]
 
 
-def install_gpu_drivers(log: Logger) -> list[str]:
+def install_gpu_drivers(log: Logger) -> list[str] | None:
     """Append the appropriate driver in the list for GPU installation.
 
     Args:
@@ -85,6 +85,6 @@ def install_gpu_drivers(log: Logger) -> list[str]:
             case ["advanced micro devices", *gpu_info]:
                 ...
 
-        t_gpu_drv.append(gpu_drv[drv_id])
+        t_gpu_drv.append(gpu_drv.get(drv_id)) # type: ignore
 
     return t_gpu_drv

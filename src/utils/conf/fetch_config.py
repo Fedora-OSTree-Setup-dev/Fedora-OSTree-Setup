@@ -46,7 +46,7 @@ def fetch_missing_config(
             log.logger(
                 "I", f"Fetching the config file ({conf_name}) from Github."
             )
-            if not (conf_link := conf_links.get(conf_name)): # type: ignore
+            if not (conf_link := conf_links.get(conf_name)):
                 log.logger(
                     "E", f"Cannot fetch the config: {conf_name}, aborting ..."
                 )
