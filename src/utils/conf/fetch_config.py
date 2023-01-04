@@ -18,20 +18,21 @@ def fetch_missing_config(
 
     conf_links: dict[str, str] = {
             "app_for_install_flatpak": (
-                    "https://raw.githubusercontent.com/iaacornus/Fedora-"
-                    "OSTree-Setup/devel/config/app_for_install_flatpak.json"
+                    "https://raw.githubusercontent.com/iaacornus/Fedora"
+                    "-OSTree-Setup/devel/config/app_for_install_flatpak.json"
+
                 ),
             "app_for_install_rpm": (
-                    "https://raw.githubusercontent.com/iaacornus/Fedora-"
-                    "OSTree-Setup/devel/config/app_for_install_rpm.json"
+                    "https://raw.githubusercontent.com/iaacornus/Fedora"
+                    "-OSTree-Setup/devel/config/app_for_install_rpm.json"
                 ),
             "app_for_removal_flatpak": (
-                    "https://raw.githubusercontent.com/iaacornus/Fedora-"
-                    "OSTree-Setup/devel/config/app_for_removal_flatpak.json"
+                    "https://raw.githubusercontent.com/iaacornus/Fedora"
+                    "-OSTree-Setup/devel/config/app_for_removal_flatpak.json"
                 ),
             "app_for_removal_rpm": (
-                    "https://raw.githubusercontent.com/iaacornus/Fedora-"
-                    "OSTree-Setup/devel/config/app_for_removal_rpm.json"
+                    "https://raw.githubusercontent.com/iaacornus/Fedora"
+                    "-OSTree-Setup/devel/config/app_for_removal_rpm.json"
                 ),
             "ostree_setup": (
                     "https://raw.githubusercontent.com/iaacornus/Fedora-"
