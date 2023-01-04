@@ -111,7 +111,8 @@ class AppInstall:
                     "flatpak",
                     "install",
                     "flathub",
-                    fapp_id
+                    fapp_id,
+                    "--assumeyes"
                 ]
 
             self.flatpak_cmd_list.append(install_cmd)
