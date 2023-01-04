@@ -29,6 +29,7 @@ class AppInstall:
                 including their application id (aid) and description
             rpm_list -- lists of the recommended applications
                 including their application id (aid) and description
+            flatpak_cmd_list -- all commands related to flatpak
             rpm_install_list -- list where the rpm that will be install
                 is contained
             verbose -- whether to display the process output or not
