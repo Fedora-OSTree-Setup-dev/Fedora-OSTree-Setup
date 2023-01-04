@@ -6,6 +6,7 @@ from typing import NoReturn
 
 from src.utils.conf.fetch_config import fetch_missing_config
 from src.utils.shared.log.logger import Logger
+from src.misc.alias import ConfigValues
 
 
 class Conf:
@@ -32,7 +33,7 @@ class Conf:
                 mkdir(self.CONF_PATH)
             except (PermissionError, OSError) as Err:
                 self.log.logger(
-                    "E", f"{Err}. Cannot make dir for {self.CONF_PATH}"
+                    "E", f"{Err}. Cannot make dir: {self.CONF_PATH}"
                 )
                 raise SystemExit
 
@@ -43,12 +44,12 @@ class Conf:
 
         return None
 
-    def load_conf(self) -> list[dict[str, str | dict[str, str]]] | NoReturn:
+    def load_conf(self) -> ConfigValues | NoReturn:
         """Load the config file, append it to list and return the list
         containing the values of config file."""
 
         try:
-            parsed_conf: list[dict[str, str | dict[str, str]]] = []
+            parsed_conf: ConfigValues = []
             for conf_name in self.CONF_LIST:
                 with open(
                         f"{self.CONF_PATH}/{conf_name}.json",
