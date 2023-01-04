@@ -1,70 +1,70 @@
 {
     "exiftool": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "perl-Image-ExifTool": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "clamtk*": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "fail2ban": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "tlp": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "make": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "gcc-c++": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "qemu-kvm": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "qemu-img": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "qemu-user-static": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "ffmpegthumbs": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "kffmpegthumbnailer": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "unrar": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "stacer": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "python-pip": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "android-tools": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         },
     "btfs": {
-            "name": "",
+            "aid": "",
             "sdesc": ""
         }
 }
