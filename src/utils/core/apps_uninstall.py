@@ -9,7 +9,7 @@ def uninstall_apps(prog_arr: list[str]) -> list[list[str]]:
         An array of the appropriate uninstall commands
     """
 
-    t_funinstall_cmds: list[list[str]] = []
+    t_fcmd: list[list[str]] = []
 
     prog: str
     for prog in prog_arr:
@@ -21,6 +21,6 @@ def uninstall_apps(prog_arr: list[str]) -> list[list[str]]:
                 "--system",
                 "--assumeyes"
             ]
-        t_funinstall_cmds.append(uninstall_cmd)
+        t_fcmd.append(uninstall_cmd)
 
-    return t_funinstall_cmds
+    return t_fcmd

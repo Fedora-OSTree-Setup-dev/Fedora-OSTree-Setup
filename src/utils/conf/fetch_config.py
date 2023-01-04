@@ -40,8 +40,8 @@ def fetch_missing_config(
                 )
         }
 
-    trial: int
-    for trial in range(3):
+    attempt: int
+    for attempt in range(3):
         try:
             log.logger(
                 "I", f"Fetching the config file ({conf_name}) from Github."
@@ -60,7 +60,7 @@ def fetch_missing_config(
                         if chunk:
                             conf_file.write(chunk)
         except (ConnectionError, IOError, PermissionError) as Err:
-            if trial < 2:
+            if attempt < 2:
                 continue
 
             log.logger(

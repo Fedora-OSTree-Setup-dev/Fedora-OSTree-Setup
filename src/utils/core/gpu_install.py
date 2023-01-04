@@ -60,7 +60,7 @@ def install_gpu_drivers(log: Logger) -> list[str]:
 
     gpu_arr: Optional[list[list[str]]] = fetch_gpu(log)
 
-    t_gpu_drvs_arr: list[str] = []
+    t_gpu_drv: list[str] = []
 
     if not gpu_arr:
         log.logger(
@@ -85,6 +85,6 @@ def install_gpu_drivers(log: Logger) -> list[str]:
             case ["advanced micro devices", *gpu_info]:
                 ...
 
-        t_gpu_drvs_arr.append(gpu_drv[drv_id])
+        t_gpu_drv.append(gpu_drv[drv_id])
 
-    return t_gpu_drvs_arr
+    return t_gpu_drv

@@ -14,7 +14,7 @@ class Conf:
 
     def __init__(self, log: Logger) -> None:
         self.CONF_PATH: str = f"{Path.home()}/.config/ostree_setup"
-        self.CONF_LIST: list[str] = [
+        self.CONF_ARR: list[str] = [
                 "app_for_install_flatpak",
                 "app_for_install_rpm",
                 "app_for_removal_flatpak",
@@ -38,7 +38,7 @@ class Conf:
                 raise SystemExit
 
         conf_name: str
-        for conf_name in self.CONF_LIST:
+        for conf_name in self.CONF_ARR:
             if not exists(f"{self.CONF_PATH}/{conf_name}.json"):
                 fetch_missing_config(self.log, conf_name, self.CONF_PATH)
 
@@ -50,7 +50,7 @@ class Conf:
 
         try:
             parsed_conf: ConfigValues = []
-            for conf_name in self.CONF_LIST:
+            for conf_name in self.CONF_ARR:
                 with open(
                         f"{self.CONF_PATH}/{conf_name}.json",
                         "r",

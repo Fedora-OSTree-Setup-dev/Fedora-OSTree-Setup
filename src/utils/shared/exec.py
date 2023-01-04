@@ -31,12 +31,12 @@ def exec_cmd(
             raise SystemExit
 
         if verbose:
-            return_code: int = run(command).returncode
+            ret: int = run(command).returncode
         else:
-            return_code = run(command, stdout=DEVNULL).returncode
+            ret = run(command, stdout=DEVNULL).returncode
 
-        if return_code != 0:
-            raise CalledProcessError(return_code, command)
+        if ret != 0:
+            raise CalledProcessError(ret, command)
         else:
             log.logger("I", f"Successfully executed the command: {command}")
     except (OSError, CalledProcessError) as Err:

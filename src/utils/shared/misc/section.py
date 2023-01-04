@@ -4,25 +4,25 @@ from rich.align import Align
 from rich.text import Text
 
 
-def title_banner(banner_text: str, banner_title: str) -> None:
+def section(msg: str, title: str) -> None:
     """For displaying of title in major operation.
 
     Args:
-        text -- main text to display
-        title -- title of the banner
+        txt -- main txt to display
+        title -- title of the section
     """
 
     Console().print(
         Panel(
             Align(
                 Text(
-                    banner_text.upper(),
+                    msg.upper(),
                     justify="center"
                 ),
                 vertical="middle",
                 align="center"
             ),
-            title=f"[bold]{banner_title.upper()}[/bold]"
+            title=f"[bold]{title.upper()}[/bold]"
         )
     )
 

@@ -87,8 +87,8 @@ class AppInstall:
     def app_install(self) -> tuple[list[list[str]], list[str]]:
         """For installation of recommended program selected by user."""
 
-        t_finstall_cmd: list[list[str]] = []
-        t_rpm_install_arr: list[str] = []
+        t_fcmd: list[list[str]] = []
+        t_rprog: list[str] = []
 
         # fprog_index -> flatpak apps index
         # rappsindex -> rpm apps index
@@ -110,7 +110,7 @@ class AppInstall:
                     fapp_id,
                     "--assumeyes"
                 ]
-            t_finstall_cmd.append(install_cmd)
+            t_fcmd.append(install_cmd)
 
 
         #* FOR RPM PROGRAM
@@ -121,6 +121,6 @@ class AppInstall:
             rapp_id: str = self.RPROG_ARR.get( # type: ignore
                     self.RPROG_INDEX.get(rprog_index) # type: ignore
                 ).get("aid")
-            t_rpm_install_arr.append(rapp_id)
+            t_rprog.append(rapp_id)
 
-        return t_finstall_cmd, t_rpm_install_arr
+        return t_fcmd, t_rprog

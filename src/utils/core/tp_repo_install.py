@@ -59,7 +59,7 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
         }
 
     t_fcmd: list[list[str]] = []
-    t_rfusion_install_arr: list[str] = []
+    t_rfusion: list[str] = []
 
     for repo in tp_repo.values():
         if uinput(
@@ -73,6 +73,6 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
                     )
                 )
                 continue
-            t_rfusion_install_arr.append(repo.get("address"))
+            t_rfusion.append(repo.get("address"))
 
-    return t_fcmd, t_rfusion_install_arr
+    return t_fcmd, t_rfusion
