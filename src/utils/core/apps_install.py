@@ -17,6 +17,7 @@ class AppInstall:
             console: Console,
             flatpak_list: AppData,
             rpm_list: AppData,
+            rpm_install_list: list[str],
             verbose: bool = False
         ) -> None:
         """
@@ -27,6 +28,8 @@ class AppInstall:
                 including their application id (aid) and description
             rpm_list -- lists of the recommended applications
                 including their application id (aid) and description
+            rpm_install_list -- list where the rpm that will be install
+                is contained
             verbose -- whether to display the process output or not
         """
 
@@ -34,6 +37,7 @@ class AppInstall:
         self.console: Console = console
         self.FLATPAK_APP_LIST: AppData = flatpak_list
         self.RPM_APP_LIST: AppData = rpm_list
+        self.rpm_to_install = rpm_install_list
         self.verbose: bool = verbose
 
         self.FLATPAK_APP_INDEX: AppIndex = {
@@ -61,6 +65,7 @@ class AppInstall:
             app_index -- index of applications and their name
             app_list -- lists of the recommended applications including
                 their application id (aid) and description
+            apptype -- type of application, where flatpak or rpm
         """
 
         title_banner(
@@ -84,20 +89,36 @@ class AppInstall:
             2
         )
 
-    def app_install(self) -> None:
+    def app_install(self) -> list[str]:
         """For installation of recommended program selected by user."""
 
-#         aindex: int
-#         for aindex in selected_app:
-#             sapp_id: str = self.FLATPAK_APP_LIST.get( # type: ignore
-#                     self.FLATPAK_APP_INDEX.get(aindex)).get("aid" # type: ignore
-#                 )
-#             install_cmd: list[str] = [
-#                     "flatpak",
-#                     "install",
-#                     "flatpak",
-#                     sapp_id
-#                 ]
-#             execute_command(self.log, install_cmd, self.verbose)
-#
-#         return None
+        # fappsindex -> flatpak apps index
+        # rappsindex -> rpm apps index
+        fappsindex: int; rappindex: int
+
+        for fappsindex in self._enum_apps(
+                self.FLATPAK_APP_INDEX, self.FLATPAK_APP_LIST, "flatpak"
+            ):
+            fapp_id: str = self.FLATPAK_APP_LIST.get(
+                    self.FLATPAK_APP_INDEX.get(fappsindex) # type: ignore
+                ).get("aid")
+            install_cmd: list[str] = [
+                    "flatpak",
+                    "install",
+                    "flathub",
+                    fapp_id
+                ]
+
+            execute_command(self.log, install_cmd, self.verbose)
+
+        #* FOR RPM PROGRAM
+        #* returns the list of name of the selected rpm applications
+        for rappindex in self._enum_apps(
+                self.RPM_APP_INDEX, self.RPM_APP_LIST, "rpm"
+            ):
+            rapp_id: str = self.RPM_APP_LIST.get( # type: ignore
+                    self.RPM_APP_INDEX.get(rappindex) # type: ignore
+                ).get("aid")
+            self.rpm_to_install.append(rapp_id)
+
+        return self.rpm_to_install
