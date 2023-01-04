@@ -5,7 +5,7 @@ from typing import NoReturn
 from src.utils.shared.log.logger import Logger
 
 
-def execute_command(
+def exec_cmd(
         log: Logger,
         command: list[str],
         verbose: bool = False,
