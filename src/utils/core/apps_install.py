@@ -3,7 +3,7 @@ from typing import Any
 from rich.console import Console
 
 from src.utils.shared.misc.uinput import uinput
-from src.utils.shared.misc.title_banner import title_banner
+from src.utils.shared.misc.section import section
 from src.utils.shared.log.logger import Logger
 from src.misc.alias import ProgData, ProgIndex
 
@@ -63,7 +63,7 @@ class AppInstall:
             apptype -- type of application, where flatpak or rpm
         """
 
-        title_banner(
+        section(
             "installation of recommended apps",
             f"recommended apps ({apptype})"
         )
