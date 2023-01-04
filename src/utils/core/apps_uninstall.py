@@ -1,19 +1,15 @@
-from src.utils.shared.exec import execute_command
-from src.utils.shared.log.logger import Logger
-
-
-def uninstall_apps(
-        log: Logger,
-        app_list: list[str],
-        verbose: bool = False,
-    ) -> None:
+def uninstall_apps(app_list: list[str]) -> list[list[str]]:
     """Uninstall preinstalled flatpak applications.
 
     Args:
-        log -- instance of Logger
         app_list -- list of apps to uninstall
-        verbose -- whether to show command output or not
+        flatpak_cmd_list -- all commands related to flatpak
+
+    Returns:
+        An array of the appropriate uninstall commands
     """
+
+    uninstall_cmds: list[list[str]] = []
 
     app: str
     for app in app_list:
@@ -25,6 +21,6 @@ def uninstall_apps(
                 "--system",
                 "--assumeyes"
             ]
-        execute_command(log, uninstall_cmd, verbose)
+        uninstall_cmds.append(uninstall_cmd)
 
-    return None
+    return uninstall_cmds
