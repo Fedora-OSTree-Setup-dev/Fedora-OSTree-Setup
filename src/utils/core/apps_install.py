@@ -17,6 +17,7 @@ class AppInstall:
             console: Console,
             flatpak_list: AppData,
             rpm_list: AppData,
+            flatpak_cmd_list: list[str],
             rpm_install_list: list[str],
             verbose: bool = False
         ) -> None:
@@ -37,7 +38,8 @@ class AppInstall:
         self.console: Console = console
         self.FLATPAK_APP_LIST: AppData = flatpak_list
         self.RPM_APP_LIST: AppData = rpm_list
-        self.rpm_to_install = rpm_install_list
+        self.rpm_to_install: list[str] = rpm_install_list
+        self.flatpak_cmd_list: list[str] = flatpak_cmd_list
         self.verbose: bool = verbose
 
         self.FLATPAK_APP_INDEX: AppIndex = {
@@ -89,13 +91,16 @@ class AppInstall:
             2
         )
 
-    def app_install(self) -> list[str]:
+    def app_install(self) -> tuple[list[str], list[str]]:
         """For installation of recommended program selected by user."""
 
         # fappsindex -> flatpak apps index
         # rappsindex -> rpm apps index
         fappsindex: int; rappindex: int
 
+        #* FOR FLATPAK PROGRAMS
+        #* appends the flatpak commands that needs to be executed in
+        #* flatpak_cmd_list for a single execution of commands
         for fappsindex in self._enum_apps(
                 self.FLATPAK_APP_INDEX, self.FLATPAK_APP_LIST, "flatpak"
             ):
@@ -109,10 +114,10 @@ class AppInstall:
                     fapp_id
                 ]
 
-            execute_command(self.log, install_cmd, self.verbose)
+            self.flatpak_cmd_list.append(install_cmd)
 
         #* FOR RPM PROGRAM
-        #* returns the list of name of the selected rpm applications
+        #* appends the list of name of the selected rpm applications
         for rappindex in self._enum_apps(
                 self.RPM_APP_INDEX, self.RPM_APP_LIST, "rpm"
             ):
