@@ -1,15 +1,54 @@
-[
-    "libavcodec-free",
-    "open-vm-tools-desktop",
-    "open-vm-tools",
-    "qemu-guest-agent",
-    "spice-vdagent",
-    "spice-webdavd",
-    "virtualbox-guest-additions",
-    "gnome-shell-extension-apps-menu",
-    "gnome-classic-session",
-    "gnome-shell-extension-window-list",
-    "gnome-shell-extension-background-logo",
-    "gnome-shell-extension-launch-new-instance",
-    "gnome-shell-extension-places-menu"
-]
+{
+    "libavcodec-free": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "open-vm-tools-desktop": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "open-vm-tools": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "qemu-guest-agent": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "spice-vdagent": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "spice-webdavd": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "virtualbox-guest-additions": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "gnome-shell-extension-apps-menu": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "gnome-classic-session": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "gnome-shell-extension-window-list": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "gnome-shell-extension-background-logo": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "gnome-shell-extension-launch-new-instance": {
+            "aid": "",
+            "sdesc": ""
+        },
+    "gnome-shell-extension-places-menu": {
+            "aid": "",
+            "sdesc": ""
+        }
+}
