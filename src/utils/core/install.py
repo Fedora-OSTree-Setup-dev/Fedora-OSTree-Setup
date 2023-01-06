@@ -10,6 +10,8 @@ from src.misc.alias import ProgData, ProgIndex
 
 
 class Install:
+    """For installation of the recommended programs."""
+
     def __init__(
             self,
             log: Logger,
@@ -22,9 +24,9 @@ class Install:
         Args:
             log -- instance of Logger
             console -- instace of console
-            flatpak_list -- lists of the recommended applications
+            fdata_arr -- lists of the recommended applications
                 including their application id (aid) and description
-            rpm_list -- lists of the recommended applications
+            rdata_arr -- lists of the recommended applications
                 including their application id (aid) and description
             verbose -- whether to display the process output or not
         """
@@ -35,13 +37,13 @@ class Install:
         self.RPROG_ARR: ProgData = rdata_arr
         self.verbose: bool = verbose
 
-        self.FPROG_INDEX: ProgIndex = {
+        self.FPROG_INDEX: ProgIndex = { # index: program id of flatpak applications
                 index: aid for index, aid in zip(
                     range(len(self.FPROG_ARR.items())),
                     self.FPROG_ARR.keys()
                 )
             }
-        self.RPROG_INDEX: ProgIndex = {
+        self.RPROG_INDEX: ProgIndex = { # index: program id of flatpak applications
                 index: aid for index, aid in zip(
                     range(len(self.RPROG_ARR.items())),
                     self.RPROG_ARR.keys()
