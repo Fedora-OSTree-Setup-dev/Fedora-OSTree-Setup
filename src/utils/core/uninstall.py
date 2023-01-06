@@ -1,18 +1,28 @@
-def uninstall_apps(prog_arr: list[str]) -> list[list[str]]:
+from src.utils.shared.misc.section import section
+
+
+def uninstall_apps(
+        prog_arr: list[str], progtype: str
+    ) -> list[list[str]] | list[str]:
     """Uninstall preinstalled flatpak applications.
 
     Args:
         prog_arr -- list of apps to uninstall
-        flatpak_cmd_list -- all commands related to flatpak
+        progtype -- the type of application to remove
 
     Returns:
-        An array of the appropriate uninstall commands
+        An array of the appropriate uninstall commands or array of the
+        applications to uninstall
     """
 
     t_fcmd: list[list[str]] = []
 
     prog: str
     for prog in prog_arr:
+        section(
+            "uninstallation of unnecessary preinstalled programs",
+            f"listed unnecessary preinstalled programs ({progtype})"
+        )
         uninstall_cmd: list[str] = [
                 "flatpak",
                 "uninstall",
