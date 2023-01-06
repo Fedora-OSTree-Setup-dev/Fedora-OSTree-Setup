@@ -1,5 +1,7 @@
 from typing import Any
 
+from rich.console import Console
+
 from src.utils.shared.misc.uinput import uinput
 from src.utils.shared.misc.section import section
 from src.misc.alias import ProgData, ProgIndex
@@ -10,17 +12,22 @@ class Install:
     """For installation of the recommended programs."""
 
     def __init__(
-            self, fp_data_arr: ProgData, rpm_data_arr: ProgData
+            self,
+            console: Console,
+            fp_data_arr: ProgData,
+            rpm_data_arr: ProgData
         ) -> None:
         """
         Args:
             log -- instance of Logger
+            console -- instance of Console
             fp_data_arr -- lists of the recommended applications
                 including their application id (aid) and description
             rpm_data_arr -- lists of the recommended applications
                 including their application id (aid) and description
         """
 
+        self.console: Console = console
         self.fp_PROGARR: ProgData = fp_data_arr
         self.rpm_PROGARR: ProgData = rpm_data_arr
 
