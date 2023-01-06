@@ -1,17 +1,63 @@
 {
-    "Calculator": "org.gnome.Calculator",
-    "Calendar": "org.gnome.Calendar",
-    "Characters": "org.gnome.Characters",
-    "Connections": "org.gnome.Connections",
-    "Contacts": "org.gnome.Contacts",
-    "Evince": "org.gnome.Evince",
-    "Extensions": "org.gnome.Extensions",
-    "Logs": "org.gnome.Logs",
-    "Maps": "org.gnome.Maps",
-    "Text Editor": "org.gnome.TextEditor",
-    "Weather": "org.gnome.Weather",
-    "Disk Usage Analyzer": "org.gnome.baobab",
-    "Clocks": "org.gnome.Clocks",
-    "Image Viewer": "org.gnome.eog",
-    "Fonts Viewer": "org.gnome.fonts-viewer"
+    "org.gnome.Calculator": {
+            "aid": "Calculator",
+            "sdesc": ""
+        },
+    "org.gnome.Calendar": {
+            "aid": "Calendar",
+            "sdesc": ""
+        },
+    "org.gnome.Characters": {
+            "aid": "Characters",
+            "sdesc": ""
+        },
+    "org.gnome.Connections": {
+            "aid": "Connections",
+            "sdesc": ""
+        },
+    "org.gnome.Contacts": {
+            "aid": "Contacts",
+            "sdesc": ""
+        },
+    "org.gnome.Evince": {
+            "aid": "Evince",
+            "sdesc": ""
+        },
+    "org.gnome.Extensions": {
+            "aid": "Extensions",
+            "sdesc": ""
+        },
+    "org.gnome.Logs": {
+            "aid": "Logs",
+            "sdesc": ""
+        },
+    "org.gnome.Maps": {
+            "aid": "Maps",
+            "sdesc": ""
+        },
+    "org.gnome.TextEditor": {
+            "aid": "Text Editor",
+            "sdesc": ""
+        },
+    "org.gnome.Weather": {
+            "aid": "Weather",
+            "sdesc": ""
+        },
+    "org.gnome.baobab": {
+            "aid": "Disk Usage Analyzer",
+            "sdesc": ""
+        },
+    "org.gnome.Clocks": {
+            "aid": "Clocks",
+            "sdesc": ""
+        },
+    "org.gnome.eog": {
+            "aid": "Image Viewer",
+            "sdesc": ""
+        },
+    "org.gnome.fonts-viewer": {
+            "aid": "Fonts Viewer",
+            "sdesc": ""
+        }
 }
+
