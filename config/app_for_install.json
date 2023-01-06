@@ -1,0 +1,154 @@
+[
+    {
+        "Mailspring": {
+                "aid": "com.getmailspring.Mailspring",
+                "sdesc": "A simple email client."
+            },
+        "LibreOffice": {
+                "aid": "org.libreoffice.LibreOffice",
+                "sdesc": "Office suite."
+            },
+        "VLC": {
+                "aid": "org.videolan.VLC",
+                "sdesc": "Video player."
+            },
+        "Okular": {
+                "aid": "org.kde.okular",
+                "sdesc": "A document viewer."
+            },
+        "GIMP": {
+                "aid": "org.gimp.GIMP",
+                "sdesc": "Photo editing application."
+            },
+        "ClamTk": {
+                "aid": "com.gitlab.davem.ClamTk",
+                "sdesc": "Front end for ClamAV."
+            },
+        "FlatSeal": {
+                "aid": "com.github.tchx84.Flatseal",
+                "sdesc": "GUI for managing flatpak applications permission"
+            },
+            "KeepassXC": {
+                "aid": "org.keepassxc.KeePassXC",
+                "sdesc": "Secure Password manager."
+            },
+        "Cryptomator": {
+                "aid": "org.cryptomator.Cryptomator",
+                "sdesc": "Secure and easy encryption, especially for Cloud storages."
+            },
+        "Easy-Effects": {
+                "aid": "com.github.wwmm.easyeffects",
+                "sdesc": "Modify your PulseAudio sound"
+            },
+        "Sync-Thingy": {
+                "aid": "com.github.zocker_160.SyncThingy",
+                "sdesc": "Sync folders securely between devices, no server."
+            },
+        "XNView MP": {
+                "aid": "com.xnview.XnViewMP",
+                "sdesc": "Image Viewer and editor with many functions"
+            },
+        "Freetube": {
+                "aid": "io.freetubeapp.FreeTube",
+                "sdesc": "Watch YouTube privately with local subscriptions and playlists."
+            },
+        "Inkscape": {
+                "aid": "org.inkscape.Inkscape",
+                "sdesc": "A Vector graphics program"
+            },
+        "GNOME Boxen": {
+                "aid": "org.gnome.Boxes",
+                "sdesc": "Manage fast Virtual machines with a simple interface."
+            },
+        "Filelight": {
+                "aid": "org.kde.filelight ",
+                "sdesc": "View what files consume how much space in a pie chart."
+            },
+        "Kdenlive": {
+                "aid": "org.kde.kdenlive",
+                "sdesc": "Video cut program"
+            },
+        "Onion Share": {
+                "aid": "org.onionshare.OnionShare",
+                "sdesc": "Share files, chat and create websites over Tor"
+            },
+        "qBittorrent": {
+                "aid": "org.qbittorrent.qBittorrent",
+                "sdesc": "Share files decentral with a big community."
+            },
+        "Metadata-cleaner": {
+                "aid": "fr.romainvigier.MetadataCleaner",
+                "sdesc": "Easily remove all identifying information on Images using exiftool."
+            }
+    },
+    {
+        "exiftool": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "perl-Image-ExifTool": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "clamtk*": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "fail2ban": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "tlp": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "make": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "gcc-c++": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "qemu-kvm": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "qemu-img": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "qemu-user-static": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "ffmpegthumbs": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "kffmpegthumbnailer": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "unrar": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "stacer": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "python-pip": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "android-tools": {
+                "aid": "",
+                "sdesc": ""
+            },
+        "btfs": {
+                "aid": "",
+                "sdesc": ""
+            }
+    }
+]
