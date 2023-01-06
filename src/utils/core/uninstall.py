@@ -1,9 +1,13 @@
 from src.utils.shared.misc.section import section
-
+from src.misc.alias import ProgData
 
 
 class Uninstall:
-    def __init__(self) -> None:
+    """For uninstallation of programs."""
+
+    def __init__(
+            fp_data_arr: ProgData, rpm_data_arr: ProgData
+        ) -> None:
         pass
 
     def uninstall_apps(
