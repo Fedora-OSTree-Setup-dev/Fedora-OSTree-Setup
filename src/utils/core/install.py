@@ -1,10 +1,7 @@
 from typing import Any
 
-from rich.console import Console
-
 from src.utils.shared.misc.uinput import uinput
 from src.utils.shared.misc.section import section
-from src.utils.shared.log.logger import Logger
 from src.misc.alias import ProgData, ProgIndex
 
 
@@ -13,29 +10,19 @@ class Install:
     """For installation of the recommended programs."""
 
     def __init__(
-            self,
-            log: Logger,
-            console: Console,
-            fdata_arr: ProgData,
-            rdata_arr: ProgData,
-            verbose: bool = False
+            self, fdata_arr: ProgData, rdata_arr: ProgData
         ) -> None:
         """
         Args:
             log -- instance of Logger
-            console -- instace of console
             fdata_arr -- lists of the recommended applications
                 including their application id (aid) and description
             rdata_arr -- lists of the recommended applications
                 including their application id (aid) and description
-            verbose -- whether to display the process output or not
         """
 
-        self.log: Logger = log
-        self.console: Console = console
         self.FPROG_ARR: ProgData = fdata_arr
         self.RPROG_ARR: ProgData = rdata_arr
-        self.verbose: bool = verbose
 
         self.FPROG_INDEX: ProgIndex = { # index: program id of flatpak applications
                 index: aid for index, aid in zip(
