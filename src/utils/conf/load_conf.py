@@ -15,10 +15,8 @@ class Conf:
     def __init__(self, log: Logger) -> None:
         self.CONF_PATH: str = f"{Path.home()}/.config/ostree_setup"
         self.CONF_ARR: list[str] = [
-                "app_for_install_flatpak",
-                "app_for_install_rpm",
-                "app_for_removal_flatpak",
-                "app_for_removal_rpm",
+                "app_for_install",
+                "app_for_removal",
                 "ostree_setup"
             ]
 
