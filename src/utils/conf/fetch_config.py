@@ -18,13 +18,12 @@ def fetch_missing_config(
 
     conf_links: dict[str, str] = {
             "app_for_install": (
-                    "https://raw.githubusercontent.com/iaacornus/Fedora"
-                    "-OSTree-Setup/devel/config/app_for_install_flatpak.json"
-
+                    "https://raw.githubusercontent.com/iaacornus/Fedora-"
+                    "OSTree-Setup/devel/config/app_for_install.json"
                 ),
             "app_for_removal": (
-                    "https://raw.githubusercontent.com/iaacornus/Fedora"
-                    "-OSTree-Setup/devel/config/app_for_removal_flatpak.json"
+                    "https://raw.githubusercontent.com/iaacornus/Fedora-"
+                    "OSTree-Setup/devel/config/app_for_removal.json"
                 ),
             "ostree_setup": (
                     "https://raw.githubusercontent.com/iaacornus/Fedora-"
