@@ -20,7 +20,7 @@ class Uninstall:
             applications to uninstall
         """
 
-        t_fcmd: list[list[str]] = []
+        t_fp_cmd: list[list[str]] = []
 
         prog: str
         for prog in prog_arr:
@@ -36,6 +36,6 @@ class Uninstall:
                     "--system",
                     "--assumeyes"
                 ]
-            t_fcmd.append(uninstall_cmd)
+            t_fp_cmd.append(uninstall_cmd)
 
-        return t_fcmd
+        return t_fp_cmd

@@ -58,7 +58,7 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
                 }
         }
 
-    t_fcmd: list[list[str]] = []
+    t_fp_cmd: list[list[str]] = []
     t_rfusion: list[str] = []
 
     for repo in tp_repo.values():
@@ -67,7 +67,7 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
             ):
             repo_name: str = repo.get("name") # type: ignore
             if repo_name.startswith("f_"):
-                t_fcmd.append(
+                t_fp_cmd.append(
                     [
                         "flatpak",
                         "remote-add",
@@ -80,4 +80,4 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
 
             t_rfusion.append(repo.get("address")) # type: ignore
 
-    return t_fcmd, t_rfusion
+    return t_fp_cmd, t_rfusion
