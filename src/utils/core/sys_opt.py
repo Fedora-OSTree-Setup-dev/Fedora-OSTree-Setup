@@ -44,3 +44,7 @@ class SysOpt:
         for cmd in cmd_arr:
             if uinput(self.console, f"Execute: {cmd}", 1):
                 exec_cmd(self.log, cmd, self.verbose)
+
+    def disable_workqueue(self):
+        """Disable workqueue to improve ssd performance"""
+        ...
