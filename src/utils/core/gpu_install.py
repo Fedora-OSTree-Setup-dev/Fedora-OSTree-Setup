@@ -9,6 +9,11 @@ from typing import Optional
 from src.utils.shared.log.logger import Logger
 
 
+#! THIS IS EXPERIMENTAL AND NOT TESTED DUE TO LACK OF HARDWARE
+#! SHOULD NOT BE CALLED YET ON THE MAIN FUNCTION IN MAIN.PY
+#! ALTHOUGH THIS CAN BE ENABLED USING A FLAG `ex` IN THE CLI
+#! BUT NOT IN DEFAULT OPTIONS, DO IT IN YOUR OWN DISCRETION
+
 def fetch_gpu(log: Logger) -> Optional[list[list[str]]]:
     """Fetch the GPU of the system.
 
