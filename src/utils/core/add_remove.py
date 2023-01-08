@@ -7,29 +7,32 @@ from src.utils.shared.misc.section import section
 from src.misc.alias import ProgData, ProgIndex
 
 
-
-class Install:
+class ProgramSetup:
     """For installation of the recommended programs."""
 
     def __init__(
             self,
             console: Console,
             fp_data_arr: ProgData,
-            rpm_data_arr: ProgData
+            rpm_data_arr: ProgData,
+            action: str
         ) -> None:
         """
         Args:
-            log -- instance of Logger
             console -- instance of Console
             fp_data_arr -- lists of the recommended applications
                 including their application id (aid) and description
             rpm_data_arr -- lists of the recommended applications
                 including their application id (aid) and description
+            action -- whether uninstall or install
         """
 
         self.console: Console = console
+
         self.fp_PROGARR: ProgData = fp_data_arr
         self.rpm_PROGARR: ProgData = rpm_data_arr
+
+        self.action: str = action
 
         self.fp_PROGIND: ProgIndex = { # ind: program id of flatpak applications
                 ind: aid for ind, aid in zip(
@@ -60,8 +63,8 @@ class Install:
         """
 
         section(
-            "installation of recommended programs",
-            f"recommended programs ({progtype})"
+            f"{self.action}ion of recommended programs"
+            f"recommended programs ({progtype})",
         )
 
         ind: int; progname: str
@@ -80,8 +83,8 @@ class Install:
             2
         )
 
-    def install(self) -> tuple[list[list[str]], list[str]]:
-        """For installation of recommended program selected by user."""
+    def setup(self) -> tuple[list[list[str]], list[str]]:
+        """For add/remove of recommended program selected by user."""
 
         t_fp_cmd: list[list[str]] = []
         t_rpm_prog: list[str] = []
@@ -99,15 +102,25 @@ class Install:
             fp_aid: str = self.fp_PROGARR.get(
                     self.fp_PROGIND.get(fp_ind) # type: ignore
                 ).get("aid")
-            install_cmd: list[str] = [
-                    "flatpak",
-                    "install",
-                    "flathub",
-                    fp_aid,
-                    "--assumeyes"
-                ]
-            t_fp_cmd.append(install_cmd)
 
+            if self.action.lower() == "install":
+                fp_cmd: list[str] = [
+                        "flatpak",
+                        "install",
+                        "flathub",
+                        fp_aid,
+                        "--assumeyes"
+                    ]
+            else:
+                fp_cmd = [
+                        "flatpak",
+                        "uninstall",
+                        fp_aid,
+                        "--system",
+                        "--delete-data",
+                        "--assumeyes"
+                    ]
+            t_fp_cmd.append(fp_cmd)
 
         #* FOR RPM PROGRAM
         #* appends the list of name of the selected rpm applications
