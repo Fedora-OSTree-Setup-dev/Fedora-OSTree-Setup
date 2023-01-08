@@ -14,7 +14,7 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
     tp_repo: dict[int, dict[str, str]] = {
             # id and name of the repo and the address
             1: {
-                    "name": "RPMFusion (Free)",
+                    "name": "rpm_RPMFusion (Free)",
                     "desc": "Fedora repository for open source softwares.",
                     "address": (
                             r"https://mirrors.rpmfusion.org/"
@@ -23,7 +23,7 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
                         )
                 },
             2: {
-                    "name": "RPMFusion (Non-free)",
+                    "name": "rpm_RPMFusion (Non-free)",
                     "desc": "Fedora repository for propietary software.",
                     "address": (
                             r"https://mirrors.rpmfusion.org/"
@@ -32,24 +32,24 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
                         )
                 },
             3: {
-                    "name": "f_Flathub",
+                    "name": "fp_Flathub",
                     "desc": "Unfiltered repository for flatpaks.",
                     "address": "https://flathub.org/repo/flathub.flatpakrepo"
                 },
             4: {
-                    "name": "f_Fedora OCI",
+                    "name": "fp_Fedora OCI",
                     "desc": "", #? what's this for?,
                     "address": "oci+https://registry.fedoraproject.org"
                 },
             5: {
-                    "name": "f_KDE",
+                    "name": "fp_KDE",
                     "desc": "KDE Applications.",
                     "address": (
                             "https://distribute.kde.org/kdeapps.flatpakrepo"
                         )
                 },
             6: {
-                    "name": "f_GNOME Nightly",
+                    "name": "fp_GNOME Nightly",
                     "desc": "For cutting edge builds from GNOME.",
                     "address": (
                             "https://nightly.gnome.org/"
@@ -63,10 +63,12 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
 
     for repo in tp_repo.values():
         if uinput(
-                console, f"Install {repo.get('name')} ({repo.get('desc')})", 1
+                console,
+                f"Install {repo.get('name')} ({repo.get('desc')})",
+                1
             ):
             repo_name: str = repo.get("name") # type: ignore
-            if repo_name.startswith("f_"):
+            if repo_name.startswith("fp_"):
                 t_fp_cmd.append(
                     [
                         "flatpak",
