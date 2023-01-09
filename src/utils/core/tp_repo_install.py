@@ -44,7 +44,7 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
                 },
             4: {
                     "name": "fp_Fedora OCI",
-                    "desc": "", #? what's this for?,
+                    "desc": "For Open Containers Initiative (OCI)", #? what's this for?
                     "address": "oci+https://registry.fedoraproject.org"
                 },
             5: {
