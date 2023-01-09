@@ -14,7 +14,7 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
     tp_repo: dict[int, dict[str, str]] = {
             # id and name of the repo and the address
             1: {
-                    "name": "rpm_RPMFusion (Free)",
+                    "name": "rpm_RPMFusion Free",
                     "desc": "Fedora repository for open source softwares.",
                     "address": (
                             r"https://mirrors.rpmfusion.org/"
@@ -23,7 +23,7 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
                         )
                 },
             2: {
-                    "name": "rpm_RPMFusion (Non-free)",
+                    "name": "rpm_RPMFusion Non-free",
                     "desc": "Fedora repository for propietary software.",
                     "address": (
                             r"https://mirrors.rpmfusion.org/"
@@ -55,6 +55,24 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
                             "https://nightly.gnome.org/"
                             "gnome-nightly.flatpakrepo"
                         )
+                },
+            7: {
+                    "name": "rpm_RPMFusion Free (Tainted)",
+                    "desc": (
+                            "Software that use a free license, but may"
+                            " have usage restriction in some countries"
+                        ),
+                    "address": "rpmfusion-free-release-tainted"
+                },
+            8: {
+                    "name": "rpm_RPMFusion Non-free (Tainted)",
+                    "desc": (
+                            "Software that uses a nonfree license and "
+                            "which is not explicitly redistributable, "
+                            "but is allowed for inter-operability "
+                            "purposes in some countries."
+                        ),
+                    "address": "rpmfusion-nonfree-release-tainted"
                 }
         }
 
