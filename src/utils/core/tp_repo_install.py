@@ -15,7 +15,10 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
             # id and name of the repo and the address
             1: {
                     "name": "rpm_RPMFusion Free",
-                    "desc": "Fedora repository for open source softwares.",
+                    "desc": (
+                            "Software that uses a free license, but is "
+                            "not accepted in Fedora for various reasons."
+                        ),
                     "address": (
                             r"https://mirrors.rpmfusion.org/"
                             r"free/fedora/rpmfusion-free-release"
@@ -24,7 +27,10 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
                 },
             2: {
                     "name": "rpm_RPMFusion Non-free",
-                    "desc": "Fedora repository for propietary software.",
+                    "desc": (
+                            "Software that uses a nonfree "
+                            "license, but is otherwise redistributable."
+                        ),
                     "address": (
                             r"https://mirrors.rpmfusion.org/"
                             r"nonfree/fedora/rpmfusion-nonfree"
