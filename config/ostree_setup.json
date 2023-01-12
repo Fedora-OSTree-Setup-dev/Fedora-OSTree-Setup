@@ -1,0 +1,4 @@
+{
+    "app_for_install_conf": "https://raw.githubusercontent.com/iaacornus/Fedora-OSTree-Setup/devel/config/app_for_install.json",
+    "app_for_uninstall_conf": "https://raw.githubusercontent.com/iaacornus/Fedora-OSTree-Setup/devel/config/app_for_removal.json"
+}
