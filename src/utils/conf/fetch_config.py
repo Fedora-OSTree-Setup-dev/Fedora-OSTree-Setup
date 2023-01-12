@@ -6,7 +6,10 @@ from src.utils.shared.log.logger import Logger
 
 
 def fetch_missing_config(
-        log: Logger, conf_name: str, CONF_PATH: str
+        log: Logger,
+        conf_name: str,
+        CONF_PATH: str,
+        conf_links: dict[str, str] = None
     ) -> None | NoReturn:
     """Downloads the original config file from github if not found.
 
@@ -14,22 +17,24 @@ def fetch_missing_config(
         log -- instance of Logger
         conf_name -- name of the missing config
         CONF_PATH -- path of the config file
+        conf_links -- links of config files
     """
 
-    conf_links: dict[str, str] = {
-            "app_for_install": (
-                    "https://raw.githubusercontent.com/iaacornus/Fedora-"
-                    "OSTree-Setup/devel/config/app_for_install.json"
-                ),
-            "app_for_removal": (
-                    "https://raw.githubusercontent.com/iaacornus/Fedora-"
-                    "OSTree-Setup/devel/config/app_for_removal.json"
-                ),
-            "ostree_setup": (
-                    "https://raw.githubusercontent.com/iaacornus/Fedora-"
-                    "OSTree-Setup/devel/config/ostree_setup.json"
-                )
-        }
+    if not conf_links:
+        conf_links = {
+                "app_for_install": (
+                        "https://raw.githubusercontent.com/iaacornus/Fedora-"
+                        "OSTree-Setup/devel/config/app_for_install.json"
+                    ),
+                "app_for_removal": (
+                        "https://raw.githubusercontent.com/iaacornus/Fedora-"
+                        "OSTree-Setup/devel/config/app_for_removal.json"
+                    ),
+                "ostree_setup": (
+                        "https://raw.githubusercontent.com/iaacornus/Fedora-"
+                        "OSTree-Setup/devel/config/ostree_setup.json"
+                    )
+            }
 
     attempt: int
     for attempt in range(3):
