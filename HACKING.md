@@ -82,4 +82,5 @@ def function(x: int) -> int:
 # TODO: THINGS THAT SHOULD BE DONE
 ```
 
-
+3. Browse `/docs/` for further documentation of the project structure,
+functions, classes and the code itself.
