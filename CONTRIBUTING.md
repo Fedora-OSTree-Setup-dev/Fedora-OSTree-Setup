@@ -33,7 +33,7 @@ hello_world: list[str] = [
     ...,
 ]
 
-"""However, in process calls, indent is not required"""
+"""However, in function calls, indent is not required"""
 hello_from_long_function(
     "arguments", "argument_2", "argument_3"
 )
@@ -43,8 +43,7 @@ Rules to type checking is provided by [PEP-0484](https://peps.python.org/pep-048
 and is checked by [`mypy`](https://github.com/python/mypy), which requires
 `type-setuptools` and `type-requests`.
 
-3. Be sure to run the unit tests and test your code first before opening pull
-requests, the unit test can be invoked with
-[`pytest`](https://github.com/pytest-dev/pytest/): `python -m pytest tests/tests.py`.
+3. Be sure to run the checks and test your code first before opening pull
+requests, the unit test can be invoked with `./check.sh`.
 
 4. Always comply to [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md).
