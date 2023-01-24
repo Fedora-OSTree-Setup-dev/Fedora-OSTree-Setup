@@ -64,7 +64,8 @@ class ProgramSetup:
     def _enum_prog(
             self,
             progindex: ProgIndex,
-            progdata: ProgData
+            progdata: ProgData,
+            progtype: str
         ) -> Any:
         """Enumerate the programs in the list and print out with a format.
 
@@ -76,7 +77,7 @@ class ProgramSetup:
         """
 
         section(
-            f"{self.action}ion of recommended programs", None
+            f"select recommended programs ({progtype})", None
         )
 
         ind: int; progname: str
