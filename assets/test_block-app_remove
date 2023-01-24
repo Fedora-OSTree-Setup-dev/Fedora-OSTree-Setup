@@ -3,188 +3,189 @@ app = {
     "Mailspring": {
             "aid": "com.getmailspring.Mailspring",
             "sdesc": "A simple email client.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "LibreOffice": {
             "aid": "org.libreoffice.LibreOffice",
             "sdesc": "Office suite.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "VLC": {
             "aid": "org.videolan.VLC",
             "sdesc": "Video player.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "Okular": {
             "aid": "org.kde.okular",
             "sdesc": "A document viewer.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "GIMP": {
             "aid": "org.gimp.GIMP",
             "sdesc": "Photo editing application.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "ClamTk": {
             "aid": "com.gitlab.davem.ClamTk",
             "sdesc": "Front end for ClamAV.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "FlatSeal": {
             "aid": "com.github.tchx84.Flatseal",
-            "sdesc": "GUI for managing flatpak applications permission",
-            "source": "flatpak"
+            "sdesc": "GUI for managing flathub applications permission",
+            "source": "flathub"
         },
         "KeepassXC": {
             "aid": "org.keepassxc.KeePassXC",
             "sdesc": "Secure Password manager.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "Cryptomator": {
             "aid": "org.cryptomator.Cryptomator",
             "sdesc": "Secure and easy encryption, especially for Cloud storages.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "Easy-Effects": {
             "aid": "com.github.wwmm.easyeffects",
             "sdesc": "Modify your PulseAudio sound",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "Sync-Thingy": {
             "aid": "com.github.zocker_160.SyncThingy",
             "sdesc": "Sync folders securely between devices, no server.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "XNView MP": {
             "aid": "com.xnview.XnViewMP",
             "sdesc": "Image Viewer and editor with many functions",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "Freetube": {
             "aid": "io.freetubeapp.FreeTube",
             "sdesc": "Watch YouTube privately with local subscriptions and playlists.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "Inkscape": {
             "aid": "org.inkscape.Inkscape",
             "sdesc": "A Vector graphics program",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "GNOME Boxen": {
             "aid": "org.gnome.Boxes",
             "sdesc": "Manage fast Virtual machines with a simple interface.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "Filelight": {
             "aid": "org.kde.filelight ",
             "sdesc": "View what files consume how much space in a pie chart.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "Kdenlive": {
             "aid": "org.kde.kdenlive",
             "sdesc": "Video cut program",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "Onion Share": {
             "aid": "org.onionshare.OnionShare",
             "sdesc": "Share files, chat and create websites over Tor",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "qBittorrent": {
             "aid": "org.qbittorrent.qBittorrent",
             "sdesc": "Share files decentral with a big community.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "Metadata-cleaner": {
             "aid": "fr.romainvigier.MetadataCleaner",
             "sdesc": "Easily remove all identifying information on Images using exiftool.",
-            "source": "flatpak"
+            "source": "flathub"
         },
     "exiftool": {
-            "aid": "",
+            "aid": "exiftool",
             "sdesc": "",
             "source": "rpm"
         },
     "perl-Image-ExifTool": {
-            "aid": "",
+            "aid": "perl-Image-ExifTool",
             "sdesc": "",
             "source": "rpm"
         },
     "clamtk*": {
-            "aid": "",
+            "aid": "clamtk*",
             "sdesc": "",
             "source": "rpm"
         },
     "fail2ban": {
-            "aid": "",
+            "aid": "fail2ban",
             "sdesc": "",
             "source": "rpm"
         },
     "tlp": {
-            "aid": "",
+            "aid": "tlp",
             "sdesc": "",
             "source": "rpm"
         },
     "make": {
-            "aid": "",
+            "aid": "make",
             "sdesc": "",
             "source": "rpm"
         },
     "gcc-c++": {
-            "aid": "",
+            "aid": "gcc-c++",
             "sdesc": "",
             "source": "rpm"
         },
     "qemu-kvm": {
-            "aid": "",
+            "aid": "qemu-kvm",
             "sdesc": "",
             "source": "rpm"
         },
     "qemu-img": {
-            "aid": "",
+            "aid": "qemu-img",
             "sdesc": "",
             "source": "rpm"
         },
     "qemu-user-static": {
-            "aid": "",
+            "aid": "qemu-user-static",
             "sdesc": "",
             "source": "rpm"
         },
     "ffmpegthumbs": {
-            "aid": "",
+            "aid": "ffmpegthumbs",
             "sdesc": "",
             "source": "rpm"
         },
     "kffmpegthumbnailer": {
-            "aid": "",
+            "aid": "kffmpegthumbnailer",
             "sdesc": "",
             "source": "rpm"
         },
     "unrar": {
-            "aid": "",
+            "aid": "unrar",
             "sdesc": "",
             "source": "rpm"
         },
     "stacer": {
-            "aid": "",
+            "aid": "stacer",
             "sdesc": "",
             "source": "rpm"
         },
     "python-pip": {
-            "aid": "",
+            "aid": "python-pip",
             "sdesc": "",
             "source": "rpm"
         },
     "android-tools": {
-            "aid": "",
+            "aid": "android-tools",
             "sdesc": "",
             "source": "rpm"
         },
     "btfs": {
-            "aid": "",
+            "aid": "btfs",
             "sdesc": "",
             "source": "rpm"
         }
 }
+
 
 print(ProgramSetup(Console(), app, "install").setup())
