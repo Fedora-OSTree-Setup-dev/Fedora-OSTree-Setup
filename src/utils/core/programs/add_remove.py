@@ -144,9 +144,19 @@ class ProgramSetup:
         for rpm_ind in self._enum_prog(
                 self.rpm_PROGIND, self.rpm_PROGARR, "rpm"
             ):
-            r_aid: str = self.rpm_PROGARR.get( # type: ignore
-                    self.rpm_PROGIND.get(rpm_ind) # type: ignore
+
+            r_aid: str = self.rpm_PROGARR.get(
+                    self.rpm_PROGIND.get(rpm_ind)
                 ).get("aid")
-            t_rpm_prog.append(r_aid)
+
+            match self.rpm_PROGARR.get(
+                    self.rpm_PROGIND.get(rpm_ind)
+                ).get("source").lower():
+                case "r_m_repo":
+                    t_rpm_prog["r_m_repo"].append(r_aid)
+                case "r_rf_free":
+                    t_rpm_prog["r_rf_free"].append(r_aid)
+                case "r_rf_nfree":
+                    t_rpm_prog["r_rf_nfree"].append(r_aid)
 
         return t_fp_cmd, t_rpm_prog
