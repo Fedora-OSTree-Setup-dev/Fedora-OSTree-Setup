@@ -4,7 +4,7 @@ from rich.align import Align
 from rich.text import Text
 
 
-def section(msg: str, title: str) -> None:
+def section(title_: str, msg_: str = None) -> None:
     """For displaying of title in major operation.
 
     Args:
@@ -16,13 +16,13 @@ def section(msg: str, title: str) -> None:
         Panel(
             Align(
                 Text(
-                    msg.upper(),
+                    msg_.upper(),
                     justify="center"
                 ),
                 vertical="middle",
                 align="center"
             ),
-            title=f"[bold]{title.upper()}[/bold]"
+            title=title_
         )
     )
 
