@@ -12,6 +12,9 @@ def section(title_: str, msg_: str = None) -> None:
         title -- title of the section
     """
 
+    if not msg_:
+        msg_, title_ = title_, None
+
     Console().print(
         Panel(
             Align(
