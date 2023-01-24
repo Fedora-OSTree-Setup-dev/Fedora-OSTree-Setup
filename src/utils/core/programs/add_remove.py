@@ -30,9 +30,7 @@ class ProgramSetup:
                     "aid": proginfo.get("aid"),
                     "sdesc": proginfo.get("sdesc"),
                     "source": proginfo.get("source")
-                } for progname, proginfo in zip(
-                        prog_data.keys(), prog_data.values()
-                    )
+                } for progname, proginfo in prog_data.items()
                 if proginfo.get("source").lower() == "flatpak"
             }
         self.rpm_PROGARR: ProgData = {
@@ -40,9 +38,7 @@ class ProgramSetup:
                     "aid": proginfo.get("aid"),
                     "sdesc": proginfo.get("sdesc"),
                     "source": proginfo.get("source")
-                } for progname, proginfo in zip(
-                        prog_data.keys(), prog_data.values()
-                    )
+                } for progname, proginfo in prog_data.items()
                 if proginfo.get("source").lower() in [
                         "rpm", "rfusion_free", "rfusion_nfree"
                     ]
