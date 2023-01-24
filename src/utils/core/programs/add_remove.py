@@ -25,6 +25,8 @@ class ProgramSetup:
 
         self.console: Console = console
 
+        progname: str; aid: str; sdesc: str; source: str
+
         self.fp_PROGARR: ProgData = {
                 progname: {
                     "aid": proginfo.get("aid"),
