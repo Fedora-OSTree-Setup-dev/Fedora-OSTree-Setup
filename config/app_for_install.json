@@ -1,154 +1,190 @@
-[
-    {
+{
+    "flatpak": {
         "Mailspring": {
                 "aid": "com.getmailspring.Mailspring",
-                "sdesc": "A simple email client."
+                "sdesc": "A simple email client.",
+                "source": "flatpak"
             },
         "LibreOffice": {
                 "aid": "org.libreoffice.LibreOffice",
-                "sdesc": "Office suite."
+                "sdesc": "Office suite.",
+                "source": "flatpak"
             },
         "VLC": {
                 "aid": "org.videolan.VLC",
-                "sdesc": "Video player."
+                "sdesc": "Video player.",
+                "source": "flatpak"
             },
         "Okular": {
                 "aid": "org.kde.okular",
-                "sdesc": "A document viewer."
+                "sdesc": "A document viewer.",
+                "source": "flatpak"
             },
         "GIMP": {
                 "aid": "org.gimp.GIMP",
-                "sdesc": "Photo editing application."
+                "sdesc": "Photo editing application.",
+                "source": "flatpak"
             },
         "ClamTk": {
                 "aid": "com.gitlab.davem.ClamTk",
-                "sdesc": "Front end for ClamAV."
+                "sdesc": "Front end for ClamAV.",
+                "source": "flatpak"
             },
         "FlatSeal": {
                 "aid": "com.github.tchx84.Flatseal",
-                "sdesc": "GUI for managing flatpak applications permission"
+                "sdesc": "GUI for managing flatpak applications permission",
+                "source": "flatpak"
             },
             "KeepassXC": {
                 "aid": "org.keepassxc.KeePassXC",
-                "sdesc": "Secure Password manager."
+                "sdesc": "Secure Password manager.",
+                "source": "flatpak"
             },
         "Cryptomator": {
                 "aid": "org.cryptomator.Cryptomator",
-                "sdesc": "Secure and easy encryption, especially for Cloud storages."
+                "sdesc": "Secure and easy encryption, especially for Cloud storages.",
+                "source": "flatpak"
             },
         "Easy-Effects": {
                 "aid": "com.github.wwmm.easyeffects",
-                "sdesc": "Modify your PulseAudio sound"
+                "sdesc": "Modify your PulseAudio sound",
+                "source": "flatpak"
             },
         "Sync-Thingy": {
                 "aid": "com.github.zocker_160.SyncThingy",
-                "sdesc": "Sync folders securely between devices, no server."
+                "sdesc": "Sync folders securely between devices, no server.",
+                "source": "flatpak"
             },
         "XNView MP": {
                 "aid": "com.xnview.XnViewMP",
-                "sdesc": "Image Viewer and editor with many functions"
+                "sdesc": "Image Viewer and editor with many functions",
+                "source": "flatpak"
             },
         "Freetube": {
                 "aid": "io.freetubeapp.FreeTube",
-                "sdesc": "Watch YouTube privately with local subscriptions and playlists."
+                "sdesc": "Watch YouTube privately with local subscriptions and playlists.",
+                "source": "flatpak"
             },
         "Inkscape": {
                 "aid": "org.inkscape.Inkscape",
-                "sdesc": "A Vector graphics program"
+                "sdesc": "A Vector graphics program",
+                "source": "flatpak"
             },
         "GNOME Boxen": {
                 "aid": "org.gnome.Boxes",
-                "sdesc": "Manage fast Virtual machines with a simple interface."
+                "sdesc": "Manage fast Virtual machines with a simple interface.",
+                "source": "flatpak"
             },
         "Filelight": {
                 "aid": "org.kde.filelight ",
-                "sdesc": "View what files consume how much space in a pie chart."
+                "sdesc": "View what files consume how much space in a pie chart.",
+                "source": "flatpak"
             },
         "Kdenlive": {
                 "aid": "org.kde.kdenlive",
-                "sdesc": "Video cut program"
+                "sdesc": "Video cut program",
+                "source": "flatpak"
             },
         "Onion Share": {
                 "aid": "org.onionshare.OnionShare",
-                "sdesc": "Share files, chat and create websites over Tor"
+                "sdesc": "Share files, chat and create websites over Tor",
+                "source": "flatpak"
             },
         "qBittorrent": {
                 "aid": "org.qbittorrent.qBittorrent",
-                "sdesc": "Share files decentral with a big community."
+                "sdesc": "Share files decentral with a big community.",
+                "source": "flatpak"
             },
         "Metadata-cleaner": {
                 "aid": "fr.romainvigier.MetadataCleaner",
                 "sdesc": "Easily remove all identifying information on Images using exiftool."
-            }
+            },
+            "source": "flatpak"
     },
-    {
+    "rpm": {
         "exiftool": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "perl-Image-ExifTool": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "clamtk*": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "fail2ban": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "tlp": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "make": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "gcc-c++": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "qemu-kvm": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "qemu-img": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "qemu-user-static": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "ffmpegthumbs": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "kffmpegthumbnailer": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "unrar": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "stacer": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "python-pip": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "android-tools": {
                 "aid": "",
-                "sdesc": ""
+                "sdesc": "",
+                "source": ""
             },
         "btfs": {
                 "aid": "",
                 "sdesc": ""
             }
     }
-]
+}
