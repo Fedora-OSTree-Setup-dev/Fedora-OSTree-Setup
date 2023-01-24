@@ -13,24 +13,40 @@ class ProgramSetup:
     def __init__(
             self,
             console: Console,
-            fp_data_arr: ProgData,
-            rpm_data_arr: ProgData,
+            prog_data: ProgData,
             action: str
         ) -> None:
         """
         Args:
             console -- instance of Console
-            fp_data_arr -- lists of the recommended applications
-                including their application id (aid) and description
-            rpm_data_arr -- lists of the recommended applications
-                including their application id (aid) and description
+            prog_data -- the database of applications
             action -- whether uninstall or install
         """
 
         self.console: Console = console
 
-        self.fp_PROGARR: ProgData = fp_data_arr
-        self.rpm_PROGARR: ProgData = rpm_data_arr
+        self.fp_PROGARR: ProgData = {
+                progname: {
+                    "aid": proginfo.get("aid"),
+                    "sdesc": proginfo.get("sdesc"),
+                    "source": proginfo.get("source")
+                } for progname, proginfo in zip(
+                        prog_data.keys(), prog_data.values()
+                    )
+                if proginfo.get("source").lower() == "flatpak"
+            }
+        self.rpm_PROGARR: ProgData = {
+                progname: {
+                    "aid": proginfo.get("aid"),
+                    "sdesc": proginfo.get("sdesc"),
+                    "source": proginfo.get("source")
+                } for progname, proginfo in zip(
+                        prog_data.keys(), prog_data.values()
+                    )
+                if proginfo.get("source").lower() in [
+                        "rpm", "rfusion_free", "rfusion_nfree"
+                    ]
+            }
 
         self.action: str = action
 
@@ -63,8 +79,8 @@ class ProgramSetup:
         """
 
         section(
-            f"{self.action}ion of recommended programs"
-            f"recommended programs ({progtype})",
+            f"{self.action}ion of recommended programs",
+            f"recommended programs ({progtype})"
         )
 
         ind: int; progname: str
