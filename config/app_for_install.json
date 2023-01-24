@@ -100,87 +100,87 @@
             "source": "flatpak"
         },
     "exiftool": {
-            "aid": "",
+            "aid": "exiftool",
             "sdesc": "",
             "source": "rpm"
         },
     "perl-Image-ExifTool": {
-            "aid": "",
+            "aid": "perl-Image-ExifTool",
             "sdesc": "",
             "source": "rpm"
         },
     "clamtk*": {
-            "aid": "",
+            "aid": "clamtk*",
             "sdesc": "",
             "source": "rpm"
         },
     "fail2ban": {
-            "aid": "",
+            "aid": "fail2ban",
             "sdesc": "",
             "source": "rpm"
         },
     "tlp": {
-            "aid": "",
+            "aid": "tlp",
             "sdesc": "",
             "source": "rpm"
         },
     "make": {
-            "aid": "",
+            "aid": "make",
             "sdesc": "",
             "source": "rpm"
         },
     "gcc-c++": {
-            "aid": "",
+            "aid": "gcc-c++",
             "sdesc": "",
             "source": "rpm"
         },
     "qemu-kvm": {
-            "aid": "",
+            "aid": "qemu-kvm",
             "sdesc": "",
             "source": "rpm"
         },
     "qemu-img": {
-            "aid": "",
+            "aid": "qemu-img",
             "sdesc": "",
             "source": "rpm"
         },
     "qemu-user-static": {
-            "aid": "",
+            "aid": "qemu-user-static",
             "sdesc": "",
             "source": "rpm"
         },
     "ffmpegthumbs": {
-            "aid": "",
+            "aid": "ffmpegthumbs",
             "sdesc": "",
             "source": "rpm"
         },
     "kffmpegthumbnailer": {
-            "aid": "",
+            "aid": "kffmpegthumbnailer",
             "sdesc": "",
             "source": "rpm"
         },
     "unrar": {
-            "aid": "",
+            "aid": "unrar",
             "sdesc": "",
             "source": "rpm"
         },
     "stacer": {
-            "aid": "",
+            "aid": "stacer",
             "sdesc": "",
             "source": "rpm"
         },
     "python-pip": {
-            "aid": "",
+            "aid": "python-pip",
             "sdesc": "",
             "source": "rpm"
         },
     "android-tools": {
-            "aid": "",
+            "aid": "android-tools",
             "sdesc": "",
             "source": "rpm"
         },
     "btfs": {
-            "aid": "",
+            "aid": "btfs",
             "sdesc": "",
             "source": "rpm"
         }
