@@ -100,9 +100,9 @@ class ProgramSetup:
 
         t_fp_cmd: list[list[str]] = []
         t_rpm_prog: dict[str, list[str]] = {
-                "m_repo": [], #* main repo
-                "rf_free": [], #* rpmfusion free
-                "rf_nfree": [] #* rpmfusion nonfree
+                "r_m_repo": [], #* main repo
+                "r_rf_free": [], #* rpmfusion free
+                "r_rf_nfree": [] #* rpmfusion nonfree
             }
 
         # fp_ind -> flatpak programs ind
