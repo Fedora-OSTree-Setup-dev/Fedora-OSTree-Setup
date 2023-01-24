@@ -33,7 +33,7 @@ class ProgramSetup:
                     "sdesc": proginfo.get("sdesc"),
                     "source": proginfo.get("source")
                 } for progname, proginfo in prog_data.items()
-                if proginfo.get("source").lower() == "flatpak"
+                if proginfo.get("source").lower() == "flathub"
             }
         self.rpm_PROGARR: ProgData = {
                 progname: {
