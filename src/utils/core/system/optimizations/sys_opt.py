@@ -1,4 +1,4 @@
-from rich.console import Console # type: ignore
+from rich.console import Console
 
 from src.utils.shared.exec import exec_cmd
 from src.utils.shared.fetch_env import fetch_env

@@ -3,7 +3,7 @@ from pathlib import Path
 from os import mkdir
 from os.path import exists
 
-from rich.logging import RichHandler # type: ignore
+from rich.logging import RichHandler
 
 
 class Logger:

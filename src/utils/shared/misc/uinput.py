@@ -1,6 +1,6 @@
 from typing import Any
 
-from rich.console import Console # type: ignore
+from rich.console import Console
 
 
 def uinput(console: Console, msg: str, qtype: int) -> Any:

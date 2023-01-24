@@ -1,9 +1,9 @@
 from typing import Optional
 
-from rich.console import Console # type: ignore
-from rich.panel import Panel # type: ignore
-from rich.align import Align # type: ignore
-from rich.text import Text # type: ignore
+from rich.console import Console
+from rich.panel import Panel
+from rich.align import Align
+from rich.text import Text
 
 
 def section(title_: str, msg_: Optional[str] = None) -> None:
