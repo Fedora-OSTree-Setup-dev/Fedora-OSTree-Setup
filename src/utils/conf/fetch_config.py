@@ -1,4 +1,4 @@
-from typing import NoReturn
+from typing import NoReturn, Optional
 
 from requests import get
 
@@ -9,7 +9,7 @@ def fetch_missing_config(
         log: Logger,
         conf_name: str,
         CONF_PATH: str,
-        conf_links: dict[str, str] = None
+        conf_links: Optional[dict[str, str]] = None
     ) -> None | NoReturn:
     """Downloads the original config file from github if not found.
 

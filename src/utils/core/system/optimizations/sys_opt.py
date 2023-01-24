@@ -1,4 +1,4 @@
-from rich.console import Console
+from rich.console import Console # type: ignore
 
 from src.utils.shared.exec import exec_cmd
 from src.utils.shared.fetch_env import fetch_env
@@ -36,7 +36,7 @@ class SysOpt:
                 ],
             ]
 
-        cmd: str
+        cmd: str | list[str]
         for cmd in cmd_arr:
             if uinput(self.console, f"Execute: {cmd}", 1):
                 exec_cmd(self.log, cmd, self.verbose)
@@ -63,6 +63,6 @@ class SysOpt:
             if uinput(self.console, f"Execute: {cmd}", 1):
                 exec_cmd(self.log, cmd, self.verbose)
 
-    def disable_workqueue(self):
+    def disable_workqueue(self) -> None:
         """Disable workqueue to improve ssd performance"""
         ...

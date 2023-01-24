@@ -1,6 +1,6 @@
 from typing import Any
 
-from rich.console import Console
+from rich.console import Console # type: ignore
 
 from src.utils.shared.misc.uinput import uinput
 from src.utils.shared.misc.section import section
@@ -29,19 +29,19 @@ class ProgramSetup:
 
         self.fp_PROGARR: ProgData = {
                 progname: {
-                    "aid": proginfo.get("aid"),
-                    "sdesc": proginfo.get("sdesc"),
-                    "source": proginfo.get("source")
+                    "aid": proginfo.get("aid"), # type: ignore
+                    "sdesc": proginfo.get("sdesc"), # type: ignore
+                    "source": proginfo.get("source") # type: ignore
                 } for progname, proginfo in prog_data.items()
-                if proginfo.get("source").lower() == "flathub"
+                if proginfo.get("source").lower() == "flathub" # type: ignore
             }
         self.rpm_PROGARR: ProgData = {
                 progname: {
-                    "aid": proginfo.get("aid"),
-                    "sdesc": proginfo.get("sdesc"),
-                    "source": proginfo.get("source")
+                    "aid": proginfo.get("aid"), # type: ignore
+                    "sdesc": proginfo.get("sdesc"), # type: ignore
+                    "source": proginfo.get("source") # type: ignore
                 } for progname, proginfo in prog_data.items()
-                if proginfo.get("source").lower() in [
+                if proginfo.get("source").lower() in [ # type: ignore
                         "rpm", "rfusion_free", "rfusion_nfree"
                     ]
             }
@@ -96,7 +96,7 @@ class ProgramSetup:
             2
         )
 
-    def setup(self) -> tuple[list[list[str]], list[str]]:
+    def setup(self) -> tuple[list[list[str]], dict[str, list[str]]]:
         """For add/remove of recommended program selected by user."""
 
         t_fp_cmd: list[list[str]] = []
@@ -145,12 +145,12 @@ class ProgramSetup:
                 self.rpm_PROGIND, self.rpm_PROGARR, "rpm"
             ):
 
-            r_aid: str = self.rpm_PROGARR.get(
-                    self.rpm_PROGIND.get(rpm_ind)
+            r_aid: str = self.rpm_PROGARR.get( # type: ignore
+                    self.rpm_PROGIND.get(rpm_ind) # type: ignore
                 ).get("aid")
 
-            match self.rpm_PROGARR.get(
-                    self.rpm_PROGIND.get(rpm_ind)
+            match self.rpm_PROGARR.get( # type: ignore
+                    self.rpm_PROGIND.get(rpm_ind) # type: ignore
                 ).get("source").lower():
                 case "r_m_repo":
                     t_rpm_prog["r_m_repo"].append(r_aid)

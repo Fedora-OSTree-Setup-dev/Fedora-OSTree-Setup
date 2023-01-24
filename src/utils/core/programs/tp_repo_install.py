@@ -1,4 +1,4 @@
-from rich.console import Console
+from rich.console import Console # type: ignore
 
 from src.utils.shared.misc.uinput import uinput
 
