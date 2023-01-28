@@ -40,10 +40,8 @@ class VariantBasedOpt:
                 3
             )
 
-    def remove_base_programs(self) -> NoReturn | None:
+    def remove_base_programs(self, variant: str) -> NoReturn | None:
         """Remova programs layered in base image of a given variant."""
-
-        variant: str = self._fetch_variant()
 
         match variant:
             case "kinoite": ...
