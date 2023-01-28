@@ -44,6 +44,6 @@ def uinput(console: Console, msg: str, qtype: int) -> Any:
                     ", separate by comma ','][/bold]"
                 ), end=" "
             )
-            return input().strip().lower()
+            return input().strip().lower().replace(r"\n", "")   
 
     return False
