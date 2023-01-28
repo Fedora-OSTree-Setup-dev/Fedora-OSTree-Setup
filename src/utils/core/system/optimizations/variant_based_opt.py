@@ -48,3 +48,20 @@ class VariantBasedOpt:
                 "silverblue": [],
                 "vauxite": [] #! from what ive heard this variant is still not yet official
             }
+
+
+    def sys_opt(self, variant: str) -> NoReturn | None:
+        """Removal/alteration of default settings that are
+        known to be detrimental in terms of performance."""
+
+        sys_opts: dict[str, list[str]] = {
+                "kinoite": [],
+                "silverblue": [
+                        [ # disable gnome software from autostart
+                            "sudo",
+                            "rm",
+                            "/etc/xdg/autostart/org.gnome.Software.desktop"
+                        ]
+                    ],
+                "vauxite": []
+            }
