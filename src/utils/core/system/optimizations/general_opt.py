@@ -41,28 +41,6 @@ class SysOpt:
             if uinput(self.console, f"Execute: {cmd}", 1):
                 exec_cmd(self.log, cmd, self.verbose)
 
-    def de_based_opt(self) -> None:
-        """For disabling of autostart exclusive on specific de"""
-        match fetch_env(
-                self.log, self.console, "XDG_SESSION_DESKTOP"
-            ).lower():
-            case "gnome":
-                cmd_arr: list[list[str]] = [
-                        [
-                            "sudo",
-                            "rm",
-                            "/etc/xdg/autostart/org.gnome.Software.desktop"
-                        ]
-                    ]
-            case "kde":
-                ... # disable baloo
-            case _:
-                return None
-
-        for cmd in cmd_arr:
-            if uinput(self.console, f"Execute: {cmd}", 1):
-                exec_cmd(self.log, cmd, self.verbose)
-
     def disable_workqueue(self) -> None:
         """Disable workqueue to improve ssd performance"""
         ...
