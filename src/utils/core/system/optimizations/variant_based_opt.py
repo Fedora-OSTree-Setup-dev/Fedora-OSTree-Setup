@@ -24,12 +24,15 @@ class VariantBasedOpt:
             osr: IO[Any]; lines: str
             with open("/etc/os-release", "r", encoding="UTF-8") as osr:
                 for lines in osr.readlines():
-                    if lines.lower().startswith("variant_id"):
-                        return lines.removeprefix("variant_id")
-                    elif lines.lower().startswith("variant"):
-                        return lines.removeprefix("variant")
+                    if lines.lower().startswith(("variant_id", "variant")):
+                        return (
+                                lines
+                                    .removeprefix("variant_id")
+                                    .removeprefix("variant")
+                                    .replace(r"\n", "")
+                            )
         except (FileNotFoundError, PermissionError) as Err:
-            self.log.logger("E", "Cannot find /etc/os-release file.")
+            self.log.logger("E", f"{Err}. Cannot find /etc/os-release file.")
 
             return uinput(
                 self.console,
