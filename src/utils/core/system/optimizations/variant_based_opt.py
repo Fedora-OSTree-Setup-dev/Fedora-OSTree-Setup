@@ -41,9 +41,10 @@ class VariantBasedOpt:
             )
 
     def remove_base_programs(self, variant: str) -> NoReturn | None:
-        """Remova programs layered in base image of a given variant."""
+        """Remove programs layered in base image of a given variant."""
 
-        match variant:
-            case "kinoite": ...
-            case "silverblue": ...
-            case "vauxite": ... #! from what ive heard this variant is still not yet official
+        base_programs: dict[str, list[str]] = {
+                "kinoite": [],
+                "silverblue": [],
+                "vauxite": [] #! from what ive heard this variant is still not yet official
+            }
