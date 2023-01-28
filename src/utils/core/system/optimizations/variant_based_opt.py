@@ -1,4 +1,4 @@
-from typing import Any, IO
+from typing import Any, IO, NoReturn
 
 from rich.console import Console
 
@@ -39,3 +39,13 @@ class VariantBasedOpt:
                 "Kindly input the Fedora OSTree variant you are using",
                 3
             )
+
+    def remove_base_programs(self) -> NoReturn | None:
+        """Remova programs layered in base image of a given variant."""
+
+        variant: str = self._fetch_variant()
+
+        match variant:
+            case "kinoite": ...
+            case "silverblue": ...
+            case "vauxite": ... #! from what ive heard this variant is still not yet official
