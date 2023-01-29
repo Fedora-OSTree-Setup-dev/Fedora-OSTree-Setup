@@ -24,7 +24,7 @@ def exec_cmd(
         init_cmd -- initial command to be piped to the main command
 
     Returns:
-        None or raise system exit
+        None, the output of the command or raise system exit
     """
 
     try:
