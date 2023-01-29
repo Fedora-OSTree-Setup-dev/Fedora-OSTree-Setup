@@ -1,5 +1,12 @@
 from shutil import which
-from subprocess import run, CalledProcessError, DEVNULL, Popen, PIPE, check_output
+from subprocess import (
+    run,
+    CalledProcessError,
+    DEVNULL,
+    Popen,
+    PIPE,
+    check_output
+)
 from typing import NoReturn, Optional
 
 from src.utils.shared.log.logger import Logger
@@ -12,7 +19,7 @@ def exec_cmd(
         break_proc: bool = False,
         pipe_: bool = False,
         init_cmd: Optional[list[str]] = None
-    ) -> NoReturn | None:
+    ) -> NoReturn | None | str:
     """For command execution/system calls with error handling
 
     Args:
@@ -28,7 +35,7 @@ def exec_cmd(
     """
 
     try:
-        if which(cmd[0]) is None:
+        if not which(cmd[0]):
             log.logger(
                 "E", f"Program: {cmd[0]} does not exists, aborting ..."
             )
@@ -42,10 +49,17 @@ def exec_cmd(
             init_cmd_out.wait()
 
             if init_cmd_out.returncode != 0:
-                CalledProcessError(init_cmd_out.returncode, init_cmd)
+                raise CalledProcessError(
+                    init_cmd_out.returncode, init_cmd
+                )
 
-            return pipe_cmd.decode("utf-8").strip().replace(r"\n", "")
-        
+            return (
+                pipe_cmd
+                    .decode("utf-8")
+                    .strip()
+                    .replace(r"\n", "")
+            )
+
         if verbose:
             ret: int = run(cmd).returncode
         else:
