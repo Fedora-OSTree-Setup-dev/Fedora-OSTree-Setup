@@ -45,6 +45,7 @@ def exec_cmd(
                 CalledProcessError(init_cmd_out.returncode, init_cmd)
 
             return pipe_cmd.decode("utf-8").strip().replace(r"\n", "")
+        
         if verbose:
             ret: int = run(cmd).returncode
         else:
@@ -52,8 +53,8 @@ def exec_cmd(
 
         if ret != 0:
             raise CalledProcessError(ret, cmd)
-        else:
-            log.logger("I", f"Successfully executed the command: {cmd}")
+
+        log.logger("I", f"Successfully executed the command: {cmd}")
     except (OSError, CalledProcessError) as Err:
         log.logger(
             "E",
