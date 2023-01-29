@@ -49,7 +49,6 @@ class VariantBasedOpt:
                 "vauxite": [] #! from what ive heard this variant is still not yet official
             }
 
-
     def sys_opt(self, variant: str) -> NoReturn | None:
         """Removal/alteration of default settings that are
         known to be detrimental in terms of performance."""
