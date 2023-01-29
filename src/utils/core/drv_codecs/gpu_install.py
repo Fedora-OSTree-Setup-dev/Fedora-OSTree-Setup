@@ -1,11 +1,7 @@
-from subprocess import (
-    Popen,
-    CalledProcessError,
-    PIPE,
-    check_output
-)
+from subprocess import CalledProcessError
 from typing import Optional
 
+from src.utils.shared.exec import exec_cmd
 from src.utils.shared.log.logger import Logger
 
 
@@ -25,25 +21,21 @@ def fetch_gpu(log: Logger) -> Optional[list[list[str]]]:
     """
 
     try:
-        lspci_out = Popen(["lspci"], stdout=PIPE)
-        gpu_name: bytes = check_output(
-                ["grep", "-i", "VGA"], stdin=lspci_out.stdout
+        gpu_name: Optional[str] = exec_cmd( # type: ignore
+                log,
+                ["grep", "-i", "VGA"],
+                False,
+                False,
+                True,
+                ["lspci"]
             )
-        lspci_out.wait()
 
-        if lspci_out.returncode != 0:
-            raise SystemExit(["lspci"], lspci_out.returncode)
     except (CalledProcessError, FileNotFoundError) as Err:
         log.logger("e", f"{Err}. Command lspci failed to execute.")
         return None
     else:
         return [
-            gpu.split(":") for gpu in (
-                gpu_name
-                    .decode("utf-8")
-                    .strip()
-                    .split("\n")
-            )
+            gpu.split(":") for gpu in gpu_name.split(r"\n")
         ]
 
 
