@@ -20,6 +20,8 @@ def exec_cmd(
         command -- command to execute with arguments
         verbose -- whether to show command output or not
         break_proc -- whether to raise systemexit or not
+        pipe_ -- whether to pipe a command or not
+        init_cmd -- initial command to be piped to the main command
 
     Returns:
         None or raise system exit
