@@ -1,6 +1,6 @@
 from shutil import which
-from subprocess import run, CalledProcessError, DEVNULL
-from typing import NoReturn
+from subprocess import run, CalledProcessError, DEVNULL, Popen, PIPE, check_output
+from typing import NoReturn, Optional
 
 from src.utils.shared.log.logger import Logger
 
@@ -9,7 +9,9 @@ def exec_cmd(
         log: Logger,
         command: list[str],
         verbose: bool = False,
-        break_proc: bool = False
+        break_proc: bool = False,
+        pipe_: bool = False,
+        init_cmd: Optional[list[str]] = None
     ) -> NoReturn | None:
     """For command execution/system calls with error handling
 
@@ -30,6 +32,17 @@ def exec_cmd(
             )
             raise SystemExit
 
+        if pipe_:
+            init_cmd_out = Popen(init_cmd, stdout=PIPE)
+            pipe_cmd: bytes = check_output(
+                command, stdin=init_cmd_out.stdout
+            )
+            init_cmd_out.wait()
+
+            if init_cmd_out.returncode != 0:
+                CalledProcessError(init_cmd_out.returncode, init_cmd)
+
+            return pipe_cmd.decode("utf-8").strip().replace(r"\n", "")
         if verbose:
             ret: int = run(command).returncode
         else:
