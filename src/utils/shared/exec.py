@@ -7,7 +7,7 @@ from src.utils.shared.log.logger import Logger
 
 def exec_cmd(
         log: Logger,
-        command: list[str],
+        cmd: list[str],
         verbose: bool = False,
         break_proc: bool = False,
         pipe_: bool = False,
@@ -17,7 +17,7 @@ def exec_cmd(
 
     Args:
         log -- Logger instance
-        command -- command to execute with arguments
+        cmd -- command to execute with arguments
         verbose -- whether to show command output or not
         break_proc -- whether to raise systemexit or not
         pipe_ -- whether to pipe a command or not
@@ -28,16 +28,16 @@ def exec_cmd(
     """
 
     try:
-        if which(command[0]) is None:
+        if which(cmd[0]) is None:
             log.logger(
-                "E", f"Program: {command[0]} does not exists, aborting ..."
+                "E", f"Program: {cmd[0]} does not exists, aborting ..."
             )
             raise SystemExit
 
         if pipe_:
             init_cmd_out = Popen(init_cmd, stdout=PIPE)
             pipe_cmd: bytes = check_output(
-                command, stdin=init_cmd_out.stdout
+                cmd, stdin=init_cmd_out.stdout
             )
             init_cmd_out.wait()
 
@@ -46,20 +46,20 @@ def exec_cmd(
 
             return pipe_cmd.decode("utf-8").strip().replace(r"\n", "")
         if verbose:
-            ret: int = run(command).returncode
+            ret: int = run(cmd).returncode
         else:
-            ret = run(command, stdout=DEVNULL).returncode
+            ret = run(cmd, stdout=DEVNULL).returncode
 
         if ret != 0:
-            raise CalledProcessError(ret, command)
+            raise CalledProcessError(ret, cmd)
         else:
-            log.logger("I", f"Successfully executed the command: {command}")
+            log.logger("I", f"Successfully executed the command: {cmd}")
     except (OSError, CalledProcessError) as Err:
         log.logger(
             "E",
             (
                 f"{Err} encountered, cannot execute"
-                " command: {command} ..."
+                " command: {cmd} ..."
             )
         )
 
