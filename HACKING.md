@@ -20,9 +20,9 @@ check if you have Python >= 3.10 with:
 python --version
 ```
 
-Although there can be workarounds, it is encouraged to use Python 3.10, but if not
-possible, it is not enforced, upto Python >= 3.7 is acceptable. Then create a
-virtual environment with
+Although there can be workarounds, it is encouraged to use Python 3.10,
+but if not possible, it is not enforced, upto Python >= 3.7 is acceptable.
+Then create a virtual environment with
 
 ```
 python -m venv venv
@@ -47,8 +47,8 @@ for acceptable interactions with in the community.
 
 # Notes
 
-1. All functions are documented with docstrings, [PEP 0257](https://peps.python.org/pep-0257/),
-which takes a format of:
+1. All functions are documented with docstrings,
+[PEP 0257](https://peps.python.org/pep-0257/), which takes a format of:
 
 ```python
 def function(x: int) -> int:
@@ -73,7 +73,7 @@ def function(x: int) -> int:
     return x*x
 ```
 
-2. Use comments, preferrably if you can use the Better Comments syntax, please do:
+2. Use comments, preferrably if you can use the Better Comments syntax:
 
 ```
 #! FOR URGENT/WARNING
