@@ -47,6 +47,15 @@ class SysOpt:
     def disable_workqueue(self) -> None:
         """Disable workqueue to improve ssd performance"""
 
+        def check_if_ssd() -> bool:
+            """Check if the system is installed on ssd or not.
+
+            Returns
+                A boolean value pertaining to whether it is or not.
+            """
+
+            ...
+
         disk_names: list[str] = [
                 parts.device for parts in disk_partitions()
             ]
