@@ -33,12 +33,12 @@ def kbd_backlit_support_check(log: Logger) -> str | None:
     return None
 
 
-def check_kbd_backlit(log: Logger, console: Console) -> None | NoReturn:
+def check_kbd_backlit(log: Logger, console: Console) -> bool | NoReturn:
     """Check whether the kbd backlit works by default keybinding,
     if not install brightnessctl and bind to a specific command."""
 
     fname: Optional[str]; i: int
-    if fname := kbd_backlit_support_check():
+    if fname := kbd_backlit_support_check(log):
         for i in range(1, 4):
             exec_cmd(
                 log,

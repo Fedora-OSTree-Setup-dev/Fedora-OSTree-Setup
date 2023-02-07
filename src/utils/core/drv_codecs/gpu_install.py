@@ -21,7 +21,7 @@ def fetch_gpu(log: Logger) -> Optional[list[list[str]]]:
     """
 
     try:
-        gpu_name: Optional[str] = exec_cmd( # type: ignore
+        gpu_name: Optional[str] = exec_cmd(
                 log,
                 ["grep", "-i", "VGA"],
                 False,
@@ -35,7 +35,7 @@ def fetch_gpu(log: Logger) -> Optional[list[list[str]]]:
         return None
     else:
         return [
-            gpu.split(":") for gpu in gpu_name.split(r"\n")
+            gpu.split(":") for gpu in gpu_name.split(r"\n")  # type: ignore
         ]
 
 
