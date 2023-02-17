@@ -1,5 +1,6 @@
 # Fedora-OSTree-Setup
 A small program making the install of Fedora Silverblue / Kionite easy. It lets you choose what to install or set.
+![Fedora CoreOS Logo](https://avatars.githubusercontent.com/u/3730757?s=200&v=4)
 
 ## Why this is needed
 An OSTree-based Fedora system can result in a pretty perfect and unbreakable experience.
