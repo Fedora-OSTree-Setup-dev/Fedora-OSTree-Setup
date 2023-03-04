@@ -1,4 +1,28 @@
 {
-    "app_for_install_conf": "https://raw.githubusercontent.com/iaacornus/Fedora-OSTree-Setup/devel/config/app_for_install.json",
-    "app_for_uninstall_conf": "https://raw.githubusercontent.com/iaacornus/Fedora-OSTree-Setup/devel/config/app_for_removal.json"
+    "app_for_install_conf": "iaacornus/Fedora-OSTree-Setup/devel/config/app_for_install.json",
+    "app_for_uninstall_conf": "iaacornus/Fedora-OSTree-Setup/devel/config/app_for_removal.json",
+    "tp_repo_install": [
+            "rpm_rfusion_f",
+            "rpm_rfusion_nf",
+            "rpm_rfusion_tainted",
+            "rpm_rfusion_nf_tained",
+            "fp_flathub",
+            "fp_fed_oci",
+            "fp_kde",
+            "fp_gnome_nightly"
+        ],
+    "install_c_drv": true,
+    "disable_wq_ssd": true,
+    "replace_toolbox": true,
+    "enable_wayland_in_ff": true,
+    "replacement_firefox_rpm": true,
+    "replace_ppd": true,
+    "s2idle-deep": true,
+    "battery_threshold": 80,
+    "remove_bpkg": true,
+    "bash-fish": true,
+    "mod_fish": {
+            "greetings": null
+        },
+    "reinstall_rfusion": true
 }
