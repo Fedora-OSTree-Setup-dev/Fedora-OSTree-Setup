@@ -17,6 +17,7 @@ def tp_repo_install(
             # id and name of the repo and the address
             1: {
                     "name": "rpm_RPMFusion Free",
+                    "id": "rpm_rfusion_f"
                     "desc": (
                             "Software that uses a free "
                             "license, but is not accepted "
@@ -30,6 +31,7 @@ def tp_repo_install(
                 },
             2: {
                     "name": "rpm_RPMFusion Non-free",
+                    "id": "rpm_rfusion_nf",
                     "desc": (
                             "Software that uses a nonfree "
                             "license, but is otherwise redistributable."
@@ -42,6 +44,7 @@ def tp_repo_install(
                 },
             3: {
                     "name": "fp_Flathub",
+                    "id": "fp_flathub",
                     "desc": "Unfiltered repository for flatpaks.",
                     "address": (
                             "https://flathub.org/repo"
@@ -49,12 +52,14 @@ def tp_repo_install(
                         )
                 },
             4: {
-                    "name": "fp_Fedora OCI",
+                    "name": "Fedora OCI (Flatpak)",
+                    "id": "fp_fed_oci",
                     "desc": "For Open Containers Initiative (OCI)", #? what's this for?
                     "address": "oci+https://registry.fedoraproject.org"
                 },
             5: {
-                    "name": "fp_KDE",
+                    "name": "KDE (Flatpak)",
+                    "id": "fp_kde",
                     "desc": "KDE Applications.",
                     "address": (
                             "https://distribute.kde.org/"
@@ -62,7 +67,8 @@ def tp_repo_install(
                         )
                 },
             6: {
-                    "name": "fp_GNOME Nightly",
+                    "name": "GNOME Nightly (Flatpak)",
+                    "id": "fp_gnome_nightly",
                     "desc": "For cutting edge builds from GNOME.",
                     "address": (
                             "https://nightly.gnome.org/"
@@ -70,7 +76,8 @@ def tp_repo_install(
                         )
                 },
             7: {
-                    "name": "rpm_RPMFusion Free (Tainted)",
+                    "name": "RPMFusion Free (Tainted)",
+                    "id": "rpm_rfusion_f_tainted",
                     "desc": (
                             "Software that use a free license, but may"
                             " have usage restriction in some countries"
@@ -78,7 +85,8 @@ def tp_repo_install(
                     "address": "rpmfusion-free-release-tainted"
                 },
             8: {
-                    "name": "rpm_RPMFusion Non-free (Tainted)",
+                    "name": "RPMFusion Non-free (Tainted)",
+                    "id": "rpm_rfusion_nf_tainted",
                     "desc": (
                             "Software that uses a nonfree license and "
                             "which is not explicitly redistributable, "
