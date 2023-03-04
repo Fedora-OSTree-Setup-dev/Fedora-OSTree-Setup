@@ -42,40 +42,7 @@ def tp_repo_install(
                             r"-release-$(rpm -E %fedora).noarch.rpm"
                         )
                 },
-            3: {
-                    "name": "fp_Flathub",
-                    "id": "fp_flathub",
-                    "desc": "Unfiltered repository for flatpaks.",
-                    "address": (
-                            "https://flathub.org/repo"
-                            "/flathub.flatpakrepo"
-                        )
-                },
-            4: {
-                    "name": "Fedora OCI (Flatpak)",
-                    "id": "fp_fed_oci",
-                    "desc": "For Open Containers Initiative (OCI)", #? what's this for?
-                    "address": "oci+https://registry.fedoraproject.org"
-                },
-            5: {
-                    "name": "KDE (Flatpak)",
-                    "id": "fp_kde",
-                    "desc": "KDE Applications.",
-                    "address": (
-                            "https://distribute.kde.org/"
-                            "skdeapps.flatpakrepo"
-                        )
-                },
-            6: {
-                    "name": "GNOME Nightly (Flatpak)",
-                    "id": "fp_gnome_nightly",
-                    "desc": "For cutting edge builds from GNOME.",
-                    "address": (
-                            "https://nightly.gnome.org/"
-                            "gnome-nightly.flatpakrepo"
-                        )
-                },
-            7: {
+                        7: {
                     "name": "RPMFusion Free (Tainted)",
                     "id": "rpm_rfusion_f_tainted",
                     "desc": (
@@ -84,7 +51,7 @@ def tp_repo_install(
                         ),
                     "address": "rpmfusion-free-release-tainted"
                 },
-            8: {
+            3: {
                     "name": "RPMFusion Non-free (Tainted)",
                     "id": "rpm_rfusion_nf_tainted",
                     "desc": (
@@ -94,7 +61,40 @@ def tp_repo_install(
                             "purposes in some countries."
                         ),
                     "address": "rpmfusion-nonfree-release-tainted"
-                }
+                },
+            4: {
+                    "name": "fp_Flathub",
+                    "id": "fp_flathub",
+                    "desc": "Unfiltered repository for flatpaks.",
+                    "address": (
+                            "https://flathub.org/repo"
+                            "/flathub.flatpakrepo"
+                        )
+                },
+            5: {
+                    "name": "Fedora OCI (Flatpak)",
+                    "id": "fp_fed_oci",
+                    "desc": "For Open Containers Initiative (OCI)", #? what's this for?
+                    "address": "oci+https://registry.fedoraproject.org"
+                },
+            6: {
+                    "name": "KDE (Flatpak)",
+                    "id": "fp_kde",
+                    "desc": "KDE Applications.",
+                    "address": (
+                            "https://distribute.kde.org/"
+                            "skdeapps.flatpakrepo"
+                        )
+                },
+            7: {
+                    "name": "GNOME Nightly (Flatpak)",
+                    "id": "fp_gnome_nightly",
+                    "desc": "For cutting edge builds from GNOME.",
+                    "address": (
+                            "https://nightly.gnome.org/"
+                            "gnome-nightly.flatpakrepo"
+                        )
+                },
         }
 
     t_fp_cmd: list[list[str]] = []
