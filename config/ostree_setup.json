@@ -4,7 +4,7 @@
     "tp_repo_install": [
             "rpm_rfusion_f",
             "rpm_rfusion_nf",
-            "rpm_rfusion_tainted",
+            "rpm_rfusion_f_tainted",
             "rpm_rfusion_nf_tained",
             "fp_flathub",
             "fp_fed_oci",
