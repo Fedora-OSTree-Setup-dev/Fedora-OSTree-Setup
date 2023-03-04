@@ -4,7 +4,7 @@ from pathlib import Path
 from json import load
 from typing import NoReturn
 
-from src.utils.conf.fetch_config import fetch_missing_config
+from utils.conf.fetch_conf import fetch_missing_config
 from src.utils.shared.log.logger import Logger
 from src.misc.alias import ConfigValues
 
