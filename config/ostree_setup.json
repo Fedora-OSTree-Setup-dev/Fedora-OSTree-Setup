@@ -1,7 +1,7 @@
 {
     "afi_conf": "iaacornus/Fedora-OSTree-Setup/devel/config/app_for_install.json",
     "afu_conf": "iaacornus/Fedora-OSTree-Setup/devel/config/app_for_removal.json",
-    "tprepo_i": [
+    "tprepo-i": [
             "rpm_rfusion_f",
             "rpm_rfusion_nf",
             "rpm_rfusion_tainted",
@@ -11,18 +11,18 @@
             "fp_kde",
             "fp_gnome_nightly"
         ],
-    "cdrv_i": true,
-    "d_wq_ssd": true,
-    "r_toolbox": true,
-    "e_wayland_ff": true,
-    "r_ff_rpm": true,
-    "r_ppd": true,
-    "sw_deep": true,
+    "cdrv-i": true,
+    "wq_ssd-d": true,
+    "toolbox-r": true,
+    "wayland_ff-e": true,
+    "ff_rpm-r": true,
+    "ppd-r": true,
+    "deep-sw": true,
     "batt_thresh": 80,
-    "r_bpkgs": true,
-    "sw_fish": true,
-    "mod_fish": {
+    "bpkgs-r": true,
+    "fish-s": true,
+    "fish-mod": {
             "greetings": null
         },
-    "ri_rfusion": true
+    "rfusion-ri": true
 }
