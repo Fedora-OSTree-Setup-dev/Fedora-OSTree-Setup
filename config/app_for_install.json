@@ -183,5 +183,60 @@
             "aid": "btfs",
             "sdesc": "",
             "source": "rpm"
+        },
+    "cheat": {
+            "aid": "cheat",
+            "sdesc": "Command help like man but shorter",
+            "source": "rpm"
+        },
+    "GNU-Debug": {
+            "aid": "gdb",
+            "sdesc": "Debug apps for creating helpful backtraces.",
+            "source": "rpm"
+        },
+    "Boxes": {
+            "aid": "gnome-boxes",
+            "sdesc": "Easy KVM Qemu Virtul Machine management.",
+            "source": "rpm"
+        },
+    "Virt-Manager": {
+            "aid": "virt-manager",
+            "sdesc": "Extended interface for KVM/Qemu, or intermediate users.",
+            "source": "rpm"
+        },
+    "lm_sensors": {
+            "aid": "lm_sensors",
+            "sdesc": "Package to read hardware sensors, dependency for addons.",
+            "source": "rpm"
+        },
+    "Performance-Measurements": {
+            "aid": "perf",
+            "sdesc": "Dependency for the App Hotspot, monitoring and visualizing app performance for debugging or curiosity.",
+            "source": "rpm"
+        },
+    "Nextcloud-Client": {
+            "aid": "nextcloud-client",
+            "sdesc": "Sync your storage with Nextcloud, allows integration in file managers, which is not possible with the Flatpak",
+            "source": "rpm"
+        },
+    "Pandoc": {
+            "aid": "pandoc",
+            "sdesc": "Convert Markdown Documents into HTML, PDF, ODT and LaTex with lots of customization. Dependency of some Dolphin Extensions.",
+            "source": "rpm"
+        },
+    "RStudio": {
+            "aid": "R rstudio-desktop",
+            "sdesc": "Scientific data analysis",
+            "source": "rpm"
+        },
+    "Waydroid": {
+            "aid": "waydroid",
+            "sdesc": "Run Android apps in a container.",
+            "source": "rpm"
+        },
+    "Powertop": {
+            "aid": "powertop"",
+            "sdesc": "Detailed CLI power monitor utility, more features than the GUI displays have.",
+            "source": "rpm"
         }
 }
