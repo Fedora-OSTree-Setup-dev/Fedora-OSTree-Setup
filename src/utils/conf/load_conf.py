@@ -23,8 +23,8 @@ class Conf:
         self.log: Logger = log
 
     def check_missing(self) -> NoReturn | None:
-        """Checks the config file if missing or not, if missing fetch the
-        original config file from the repository."""
+        """Checks the config file if missing or not, if missing
+        fetch the original config file from the repository."""
 
         if not isdir(self.CONF_PATH):
             try:
@@ -38,7 +38,9 @@ class Conf:
         conf_name: str
         for conf_name in self.CONF_ARR:
             if not exists(f"{self.CONF_PATH}/{conf_name}.json"):
-                fetch_missing_config(self.log, conf_name, self.CONF_PATH)
+                fetch_missing_config(
+                    self.log, conf_name, self.CONF_PATH
+                )
 
         return None
 
@@ -59,7 +61,10 @@ class Conf:
                     )
         except (FileNotFoundError, PermissionError) as Err:
             self.log.logger(
-                "I", f"{Err}. Can't open config file, run the program again."
+                "I", (
+                        f"{Err}. Can't open config"
+                        "file, run the program again."
+                    )
             )
         else:
             return parsed_conf

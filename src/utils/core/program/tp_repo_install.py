@@ -3,7 +3,9 @@ from rich.console import Console
 from src.utils.shared.misc.uinput import uinput
 
 
-def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
+def tp_repo_install(
+        console: Console
+    ) -> tuple[list[list[str]], list[str]]:
     """Install third party repositories.
 
     Args:
@@ -16,8 +18,9 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
             1: {
                     "name": "rpm_RPMFusion Free",
                     "desc": (
-                            "Software that uses a free license, but is "
-                            "not accepted in Fedora for various reasons."
+                            "Software that uses a free "
+                            "license, but is not accepted "
+                            "in Fedora for various reasons."
                         ),
                     "address": (
                             r"https://mirrors.rpmfusion.org/"
@@ -40,7 +43,10 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
             3: {
                     "name": "fp_Flathub",
                     "desc": "Unfiltered repository for flatpaks.",
-                    "address": "https://flathub.org/repo/flathub.flatpakrepo"
+                    "address": (
+                            "https://flathub.org/repo"
+                            "/flathub.flatpakrepo"
+                        )
                 },
             4: {
                     "name": "fp_Fedora OCI",
@@ -51,7 +57,8 @@ def tp_repo_install(console: Console) -> tuple[list[list[str]], list[str]]:
                     "name": "fp_KDE",
                     "desc": "KDE Applications.",
                     "address": (
-                            "https://distribute.kde.org/kdeapps.flatpakrepo"
+                            "https://distribute.kde.org/"
+                            "skdeapps.flatpakrepo"
                         )
                 },
             6: {

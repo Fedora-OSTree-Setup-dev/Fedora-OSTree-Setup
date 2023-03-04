@@ -61,7 +61,8 @@ class SysOpt:
             """Check if the devices are encrypted or not.
 
             Returns
-                if the device is encrypted, return the name of the device,
+                if the device is encrypted, return the name of the
+                    device,
                 if otherwise, return false.
             """
 

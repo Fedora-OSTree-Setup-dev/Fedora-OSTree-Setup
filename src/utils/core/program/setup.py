@@ -67,7 +67,8 @@ class ProgramSetup:
             progdata: ProgData,
             progtype: str
         ) -> Any:
-        """Enumerate the programs in the list and print out with a format.
+        """Enumerate the programs in the list and print out with a
+        format.
 
         Args:
             progindex -- ind of applications and their name

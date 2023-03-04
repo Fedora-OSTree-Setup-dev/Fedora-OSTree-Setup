@@ -49,7 +49,8 @@ class Logger:
         self.log.addHandler(file_log)
 
     def logger(self, exception_: str, message: str) -> None:
-        """Log the proccesses using passed message and exception_ variable.
+        """Log the proccesses using passed message and exception_
+        variable.
 
         Args:
             exception_ -- determines what type of log level to use

@@ -9,7 +9,8 @@ def uinput(console: Console, msg: str, qtype: int) -> Any:
     Args:
         console -- Console instance
         msg -- question to ask the user
-        qtype -- question type, whether y/N, string input or number input
+        qtype -- question type, whether y/N, string input or number
+            input
             1 is yes or no input
             2 is number/list input
             3 is for string or char input
@@ -24,7 +25,12 @@ def uinput(console: Console, msg: str, qtype: int) -> Any:
     match qtype:
         case 1:
             console.print(
-                f"{msg} [bold][[green]y[/green]/[red]N[/red]][/bold]", end=" "
+                (
+                    f"{msg} "
+                    "[bold][[green]y[/green]/"
+                    "[red]N[/red]][/bold]"
+                ),
+                end=" "
             )
             if input().lower().strip() == "y":
                 return True
@@ -44,6 +50,6 @@ def uinput(console: Console, msg: str, qtype: int) -> Any:
                     ", separate by comma ','][/bold]"
                 ), end=" "
             )
-            return input().strip().lower().replace(r"\n", "")   
+            return input().strip().lower().replace(r"\n", "")
 
     return False

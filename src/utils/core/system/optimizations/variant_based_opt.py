@@ -32,7 +32,9 @@ class VariantBasedOpt:
                                     .replace(r"\n", "")
                             )
         except (FileNotFoundError, PermissionError) as Err:
-            self.log.logger("E", f"{Err}. Cannot find /etc/os-release file.")
+            self.log.logger(
+                "E", f"{Err}. Cannot find /etc/os-release file."
+            )
 
         return uinput(
             self.console,
@@ -67,7 +69,10 @@ class VariantBasedOpt:
                         [ # disable gnome software from autostart
                             "sudo",
                             "rm",
-                            "/etc/xdg/autostart/org.gnome.Software.desktop"
+                            (
+                                "/etc/xdg/autostart/"
+                                "org.gnome.Software.desktop"
+                            )
                         ]
                     ],
                 "vauxite": [

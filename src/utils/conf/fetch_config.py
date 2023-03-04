@@ -23,16 +23,19 @@ def fetch_missing_config(
     if not conf_links:
         conf_links = {
                 "app_for_install": (
-                        "https://raw.githubusercontent.com/iaacornus/Fedora-"
-                        "OSTree-Setup/devel/config/app_for_install.json"
+                        "https://raw.githubusercontent.com/"
+                        "iaacornus/Fedora-OSTree-Setup/"
+                        "devel/config/app_for_install.json"
                     ),
                 "app_for_removal": (
-                        "https://raw.githubusercontent.com/iaacornus/Fedora-"
-                        "OSTree-Setup/devel/config/app_for_removal.json"
+                        "https://raw.githubusercontent.com/"
+                        "iaacornus/Fedora-OSTree-Setup/"
+                        "devel/config/app_for_removal.json"
                     ),
                 "ostree_setup": (
-                        "https://raw.githubusercontent.com/iaacornus/Fedora-"
-                        "OSTree-Setup/devel/config/ostree_setup.json"
+                        "https://raw.githubusercontent.com/"
+                        "iaacornus/Fedora-OSTree-Setup/"
+                        "devel/config/ostree_setup.json"
                     )
             }
 
@@ -40,11 +43,17 @@ def fetch_missing_config(
     for attempt in range(3):
         try:
             log.logger(
-                "I", f"Fetching the config file ({conf_name}) from Github."
+                "I", (
+                        "Fetching the config file "
+                        f"({conf_name}) from Github."
+                    )
             )
             if not (conf_link := conf_links.get(conf_name)):
                 log.logger(
-                    "E", f"Cannot fetch the config: {conf_name}, aborting ..."
+                    "E", (
+                            "Cannot fetch the config: "
+                            f"{conf_name}, aborting ..."
+                        )
                 )
                 raise SystemExit
 
