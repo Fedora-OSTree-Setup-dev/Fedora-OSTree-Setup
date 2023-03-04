@@ -17,7 +17,7 @@ def tp_repo_install(
             # id and name of the repo and the address
             1: {
                     "name": "rpm_RPMFusion Free",
-                    "id": "rpm_rfusion_f"
+                    "id": "rpm_rfusion_f",
                     "desc": (
                             "Software that uses a free "
                             "license, but is not accepted "
@@ -106,8 +106,8 @@ def tp_repo_install(
                 f"Install {repo.get('name')} ({repo.get('desc')})",
                 1
             ):
-            repo_name: str = repo.get("name") # type: ignore
-            if repo_name.startswith("fp_"):
+            repo_id: str = repo.get("id") # type: ignore
+            if repo_id.startswith("fp_"):
                 t_fp_cmd.append(
                     [
                         "flatpak",
