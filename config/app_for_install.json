@@ -235,7 +235,7 @@
             "source": "rpm"
         },
     "Powertop": {
-            "aid": "powertop"",
+            "aid": "powertop",
             "sdesc": "Detailed CLI power monitor utility, more features than the GUI displays have.",
             "source": "rpm"
         }
