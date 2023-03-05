@@ -99,89 +99,64 @@
             "sdesc": "Easily remove all identifying information on Images using exiftool.",
             "source": "flathub"
         },
-    "exiftool": {
-            "aid": "exiftool",
-            "sdesc": "",
-            "source": "rpm"
-        },
     "perl-Image-ExifTool": {
             "aid": "perl-Image-ExifTool",
-            "sdesc": "",
+            "sdesc": "Remove identifying Data from images.",
             "source": "rpm"
         },
     "clamtk*": {
-            "aid": "clamtk*",
-            "sdesc": "",
+            "aid": "clamtk",
+            "sdesc": "Scan Files for Viruses.",
             "source": "rpm"
         },
     "fail2ban": {
             "aid": "fail2ban",
-            "sdesc": "",
+            "sdesc": "Block brute force attacks when having opened ports on your Machine. Used for Servers worldwide.",
             "source": "rpm"
         },
     "tlp": {
             "aid": "tlp",
-            "sdesc": "",
-            "source": "rpm"
-        },
-    "make": {
-            "aid": "make",
-            "sdesc": "",
-            "source": "rpm"
-        },
-    "gcc-c++": {
-            "aid": "gcc-c++",
-            "sdesc": "",
+            "sdesc": "Advanced power management for your Laptop.",
             "source": "rpm"
         },
     "qemu-kvm": {
             "aid": "qemu-kvm",
-            "sdesc": "",
-            "source": "rpm"
-        },
-    "qemu-img": {
-            "aid": "qemu-img",
-            "sdesc": "",
-            "source": "rpm"
-        },
-    "qemu-user-static": {
-            "aid": "qemu-user-static",
-            "sdesc": "",
+            "sdesc": "Requirement for Boxes or Virt-Manager",
             "source": "rpm"
         },
     "ffmpegthumbs": {
             "aid": "ffmpegthumbs",
-            "sdesc": "",
+            "sdesc": "Enable ffmpeg to be used for video thumbnails.",
             "source": "rpm"
         },
     "kffmpegthumbnailer": {
             "aid": "kffmpegthumbnailer",
-            "sdesc": "",
+            "sdesc": "Display Video Thumbnails in KDEs File Manager.",
             "source": "rpm"
         },
     "unrar": {
             "aid": "unrar",
-            "sdesc": "",
+            "sdesc": "Allows unpacking the .rar archive format.",
             "source": "rpm"
         },
     "stacer": {
             "aid": "stacer",
-            "sdesc": "",
+            "sdesc": "Powerful System monitor, cleaner, startup configurator.",
             "source": "rpm"
         },
     "python-pip": {
             "aid": "python-pip",
-            "sdesc": "",
+            "sdesc": "Download python scripts from the Python Repository.",
             "source": "rpm"
         },
     "android-tools": {
             "aid": "android-tools",
-            "sdesc": "",
+            "sdesc": "Includes ADB and Fastboot, needed to install a custom OS on your Android phone.",
             "source": "rpm"
         },
     "btfs": {
             "aid": "btfs",
-            "sdesc": "",
+            "sdesc": "Mount .torrent files into your system and use them live.",
             "source": "rpm"
         }
 }
