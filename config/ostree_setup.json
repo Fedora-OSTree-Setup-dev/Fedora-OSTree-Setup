@@ -22,7 +22,7 @@
     "bpkgs-rm": true,
     "fish-setup": true,
     "fish-mod": {
-            "greetings": null
+            "greetings": null,
         },
     "rfusion-radd": true,
     "add-fonts": {
