@@ -1,0 +1,4 @@
+rich==12.6.0
+requests==2.28.1
+psutil==5.9.4
+blkinfo==0.2.0
