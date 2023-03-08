@@ -179,11 +179,6 @@
             "sdesc": "Extended interface for KVM/Qemu, or intermediate users.",
             "source": "rpm"
         },
-    "lm_sensors": {
-            "aid": "lm_sensors",
-            "sdesc": "Package to read hardware sensors, dependency for addons.",
-            "source": "rpm"
-        },
     "Performance-Measurements": {
             "aid": "perf",
             "sdesc": "Dependency for the App Hotspot, monitoring and visualizing app performance for debugging or curiosity.",
